@@ -14,6 +14,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
 
 
   // pdf contenent
+
   constructor(private httpClient: HttpClient) {
 
     this.getImage();
@@ -32,6 +33,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
   message: string;
   // session variables
   imageName: any;
+  id;
   email: string;
   firstName: string;
   lastName: string;
@@ -157,31 +159,6 @@ export class FreelancerNewsfeedComponent implements OnInit {
   }
 
 
-  onChange(event) {
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
-    this.onUpload();
-  }
-
-  onUpload() {
-    console.log("upload");
-    console.log(this.selectedFile);
-
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-    //Make a call to the Spring Boot Application to save the image
-    this.httpClient.post('http://127.0.0.1:8070/freelancers/saveImageByEmail/'+sessionStorage.getItem("username"), uploadImageData, { observe: 'response' })
-      .subscribe((response) => {
-        if (response.status === 200) {
-          this.message = 'Image uploaded successfully';
-        } else {
-          this.message = 'Image not uploaded successfully';
-        }
-        this.getImage();
-      }
-  );
-  }
 
 
 
@@ -225,7 +202,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
             this.Image = 'data:image/jpeg;base64,' + this.base64Data;
           }
 
-
+          this.id = this.freelancer.id;
           this.email = this.freelancer.email;
           this.firstName = this.freelancer.firstName;
           this.lastName = this.freelancer.lastName;
@@ -239,6 +216,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
           this.telephone_number = this.freelancer.telephoneNumber;
           this.nationality = this.freelancer.nationality;
 
+          sessionStorage.setItem("id",this.id);
           sessionStorage.setItem('username', this.email);
           sessionStorage.setItem('firstName', this.firstName);
           sessionStorage.setItem('lastName', this.lastName);

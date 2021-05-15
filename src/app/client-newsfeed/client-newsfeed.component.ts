@@ -23,6 +23,7 @@ export class ClientNewsfeedComponent implements OnInit {
   message: string;
   //session variables
   imageName: any;
+  id;
   email: string;
   firstName: string;
   lastName: string;
@@ -96,7 +97,7 @@ export class ClientNewsfeedComponent implements OnInit {
             this.Image = 'data:image/jpeg;base64,' + this.base64Data;
           }
 
-
+          this.id=this.freelancer.id;
           this.email=this.freelancer.email;
           this.firstName=this.freelancer.firstName;
           this.lastName=this.freelancer.lastName;
@@ -111,6 +112,7 @@ export class ClientNewsfeedComponent implements OnInit {
           this.nationality=this.freelancer.nationality;
 
           sessionStorage.setItem("username",this.email);
+          sessionStorage.setItem("id",this.id);
           sessionStorage.setItem("firstName",this.firstName);
           sessionStorage.setItem("lastName",this.lastName);
           sessionStorage.setItem('address',this.address);
