@@ -32,10 +32,12 @@ export class FreelancerService {
   updateFreelancer(myObj) {
     return this.Http.put(this.urlFreelancers + '/' + myObj['id'], myObj);
   }
+
   updateFreelancerProfile(freelancer) {
     return this.Http.put(this.urlFreelancers + '/profile/' + freelancer['email'], freelancer);
 
   }
+
   deleteFreelancer(myObj) {
     return this.Http.delete(this.urlFreelancers + '/' + myObj['id'], myObj)
   }

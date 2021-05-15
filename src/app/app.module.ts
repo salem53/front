@@ -44,8 +44,10 @@ import { AddSkillComponent } from './add-skill/add-skill.component';
 import { AddStudyComponent } from './add-study/add-study.component';
 import { CertificationComponent } from './certification/certification.component';
 import { ExperienceComponent } from './experience/experience.component';
+
 import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-profile/update-freelancer-data-profile.component';
 import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
+
 
 
 @NgModule({
@@ -87,9 +89,11 @@ import {UpdateClientDataProfileComponent} from './update-client-data-profile/upd
     AddSkillComponent,
     AddStudyComponent,
     CertificationComponent,
+
     ExperienceComponent,
     UpdateFreelancerDataProfileComponent,
     UpdateClientDataProfileComponent
+
   ],
   imports: [
     BrowserModule,

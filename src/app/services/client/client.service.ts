@@ -43,8 +43,10 @@ export class ClientService {
     return this.Http.get(this.urlClients+'/getClientByEmail/'+email)
   }
 
+
   updateClientProfile(client) {
     return this.Http.put(this.urlClients + '/profile/' + client['email'], client);
 
   }
+
 }

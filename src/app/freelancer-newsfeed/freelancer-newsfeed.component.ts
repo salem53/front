@@ -9,9 +9,16 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ['./freelancer-newsfeed.component.css']
 })
 export class FreelancerNewsfeedComponent implements OnInit {
+
+  // Gets called when the user clicks on retieve image button to get the image from back end
+
+
+  // pdf contenent
   constructor(private httpClient: HttpClient) {
 
+    this.getImage();
   }
+
 
   // image details
   selectedFile: File;
@@ -37,10 +44,12 @@ export class FreelancerNewsfeedComponent implements OnInit {
   sexe: any;
   telephone_number: any;
   nationality: any;
-  // Gets called when the user clicks on retieve image button to get the image from back end
-  45;
+  //Gets called when the user clicks on retieve image button to get the image from back end
 
-  // pdf content
+
+
+  //pdf content
+
   public docDefinition = {
     /*header: 'Resume',*/
     content: [
@@ -131,9 +140,50 @@ export class FreelancerNewsfeedComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.getImage();
+    this.email = sessionStorage.getItem("username");
+    this.firstName = sessionStorage.getItem("firstName");
+    this.lastName = sessionStorage.getItem("lastName");
+    this.address=sessionStorage.getItem('address');
+    this.description=sessionStorage.getItem('description');
+    this.earning=sessionStorage.getItem('earning');
+    this.inscription_date=sessionStorage.getItem('inscription_date');
+    this.job=sessionStorage.getItem('job');
+    this.rating=sessionStorage.getItem('rating');
+    this.sexe=sessionStorage.getItem('sexe');
+    this.telephone_number=sessionStorage.getItem('telephone_number');
+    this.nationality=sessionStorage.getItem('nationality');
+
 
   }
+
+
+  onChange(event) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+    this.onUpload();
+  }
+
+  onUpload() {
+    console.log("upload");
+    console.log(this.selectedFile);
+
+    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
+    const uploadImageData = new FormData();
+    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    //Make a call to the Spring Boot Application to save the image
+    this.httpClient.post('http://127.0.0.1:8070/freelancers/saveImageByEmail/'+sessionStorage.getItem("username"), uploadImageData, { observe: 'response' })
+      .subscribe((response) => {
+        if (response.status === 200) {
+          this.message = 'Image uploaded successfully';
+        } else {
+          this.message = 'Image not uploaded successfully';
+        }
+        this.getImage();
+      }
+  );
+  }
+
+
 
   onChange(event) {
     this.selectedFile = event.target.files[0];
