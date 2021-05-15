@@ -15,6 +15,7 @@
 
               <!--<h4 class="page-header">Default Implementation</h4>-->  
                 <form role="form" #myForm=ngForm (ngSubmit)= newMission(myForm)>
+                    <div *ngIf=message>{{message}}</div>
                    <!-- <div class="form-group float-label-control">
                         <label for="">id</label>
                         <input type="text" class="form-control" placeholder="Username" name="id"  >
@@ -24,39 +25,47 @@
                         <label for="">Mission Title</label>
                         <input type="text" class="form-control" placeholder="title" #title="ngModel" name="title" [(ngModel)]="mission.title" required>
                     </div>
-                    <div [hidden]="title.valid || title.pristine">The mission Title is required </div>
+                    <div [hidden]="title.valid || title.pristine"  style="color: red;">The mission Title is required </div>
            
                     <div class="form-group float-label-control">
                         <label for=""> Description: </label>
                         <input type="text" class="form-control" placeholder="description" #description="ngModel" rows="1" name="description" [(ngModel)]="mission.description" required>
                     </div>
-                    <div [hidden]="description.valid || description.pristine ">The description is required </div>
+                    <div [hidden]="description.valid || description.pristine "  style="color: red;">The description is required in order to explain more about the project </div>
                    
                     <div class="form-group float-label-control">
                         <label for=""> Technologies required: </label>
                         <input type="text" class="form-control" placeholder="Technologies" #technologies="ngModel" rows="1" name="technologies" [(ngModel)]="mission.technologies" required>
+                      
+                        <div  style="color: blue;">Please enter the necessary technologies in this specific combination:techno1/techno2/... </div>
                     </div>
-                    <div [hidden]="technologies.valid || technologies.pristine ">Technologies are required </div>
+                    <div [hidden]="technologies.valid || technologies.pristine "  style="color: red;" >Technologies are required </div>
                        
                     
                     <div class="form-group float-label-control">
                         <label for=""> Duration </label>
                         <input type="text" class="form-control" placeholder="date" #duration="ngModel" rows="1" name="duration" [(ngModel)]="mission.duration" required>
                     </div>
-                    <div [hidden]="duration.valid ||  duration.pristine ">The duration  is required </div>
+                    <div [hidden]="duration.valid ||  duration.pristine "  style="color: red;" >The limited duration  is required </div>
 
                     <div class="form-group float-label-control">
                         <label for="">Average Payment : </label>
                         <input type="number" class="form-control" placeholder="averagePayment" #averagePayment="ngModel" rows="1" name="averagePayment" [(ngModel)]="mission.averagePayment" >
                     </div>
-                    <div [hidden]="averagePayment.valid ||  averagePayment.pristine ">The average Payment  is required </div>
+                    <div [hidden]="averagePayment.valid ||  averagePayment.pristine "  style="color: red;">The average Payment  is required </div>
                     
+                          <div class="form-group float-label-control">
+                        <label for="">Beginning Date : </label>
+                        <input type="date" class="form-control" placeholder="beginningDate" #beginningDate="ngModel" rows="1" name="beginningDate" [(ngModel)]="mission.beginningDate" >
+                    </div>
+                    <div [hidden]="beginningDate.valid ||  beginningDate.pristine " style="color: red;">The beginningDate  is required </div>
+
                     <div class="form-group float-label-control">
                         <label for=""> File </label>
-                        <input type="file" class="form-control" placeholder="file" #file="ngModel" rows="1" name="file" [(ngModel)]="mission.file" >
+                        <input type="file" class="form-control" placeholder="file"  rows="1" name="file" (change)="onFileChanged($event)">
                     </div>
                     
-                    <button class="btn btn-action" type="submit" [disabled]=!myForm.valid> Submit </button>
+                    <button class="btn btn-action" type="submit" [disabled]=!myForm.valid > Submit </button>
 
                 </form>
 
@@ -86,3 +95,4 @@
         </div>
     </div>
 </div>
+
