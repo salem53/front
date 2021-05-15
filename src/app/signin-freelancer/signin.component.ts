@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {FreelancerAuthenticationService} from "../services/freelancer/freelancer-authentication.service";
-import {FreelancerService} from "../services/freelancer/freelancer.service";
+
+
+import {Router} from '@angular/router';
+import {FreelancerAuthenticationService} from '../services/freelancer/freelancer-authentication.service';
+import {FreelancerService} from '../services/freelancer/freelancer.service';
+
 
 @Component({
   selector: 'app-signin',

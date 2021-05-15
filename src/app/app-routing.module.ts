@@ -7,6 +7,7 @@ import {SidebarLeftComponent} from './sidebar-left/sidebar-left.component';
 import {SidebarRightComponent} from './sidebar-right/sidebar-right.component';
 import {SignupComponent} from './signup-freelancer/signup.component';
 import {SigninComponent} from './signin-freelancer/signin.component';
+
 import {ListFreelancersComponent} from "./list-freelancers/list-freelancers.component";
 import {UpdateFreelancerComponent} from "./update-freelancer/update-freelancer.component";
 import {SigninClientComponent} from "./signin-client/signin-client.component";
@@ -29,11 +30,16 @@ import {ClientAuthguardService} from "./services/client/client-authguard.service
 import {TestFlaskComponent} from "./test-flask/test-flask.component";
 import {PaypalTestComponent} from "./paypal-test/paypal-test.component";
 import {PdfTestComponent} from "./pdf-test/pdf-test.component";
+
 import { ExperienceComponent } from './experience/experience.component';
 import { CertificationComponent } from './certification/certification.component';
 import { AddMissionComponent } from './add-mission/add-mission.component';
 import { AddStudyComponent } from './add-study/add-study.component';
 import { AddSkillComponent } from './add-skill/add-skill.component';
+
+import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-profile/update-freelancer-data-profile.component';
+import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
+
 
 const routes: Routes = [
 
@@ -48,27 +54,33 @@ const routes: Routes = [
   { path: 'sidebar-right', component: SidebarRightComponent },
   { path: 'signin-freelancer', component: SigninComponent },
   { path: 'signup-freelancer', component: SignupComponent },
-  { path: 'signout-freelancer', component: SignoutFreelancerComponent,canActivate: [FreelancerAuthGuardService] },
-  { path: 'newsfeed-freelancer', component: FreelancerNewsfeedComponent,canActivate: [FreelancerAuthGuardService] },
-  { path: 'freelancers', component: ListFreelancersComponent,canActivate: [AdminAuthguardService] },
+
+  { path: 'signout-freelancer', component: SignoutFreelancerComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'newsfeed-freelancer', component: FreelancerNewsfeedComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'freelancers', component: ListFreelancersComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-client', component: SigninClientComponent },
   { path: 'signup-client', component: SignupClientComponent },
-  { path: 'signout-client', component: SignoutClientComponent,canActivate: [ClientAuthguardService] },
-  { path: 'newsfeed-client', component: ClientNewsfeedComponent ,canActivate: [ClientAuthguardService]},
-  { path: 'clients', component: ListClientsComponent,canActivate: [AdminAuthguardService] },
+  { path: 'signout-client', component: SignoutClientComponent, canActivate: [ClientAuthguardService] },
+  { path: 'newsfeed-client', component: ClientNewsfeedComponent , canActivate: [ClientAuthguardService]},
+  { path: 'clients', component: ListClientsComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-admin', component: SigninAdminComponent },
-  { path: 'signup-admin', component: SignupAdminComponent,canActivate: [AdminAuthguardService] },
-  { path: 'signout-admin', component: SignoutAdminComponent,canActivate: [AdminAuthguardService] },
-  { path: 'newsfeed-admin', component: AdminNewsfeedComponent,canActivate: [AdminAuthguardService] },
-  { path: 'admins', component: ListAdminsComponent,canActivate: [AdminAuthguardService] },
-  { path: 'updateFreelancer/:id', component: UpdateFreelancerComponent,canActivate: [AdminAuthguardService] },
-  { path: 'updateClient/:id', component: UpdateClientComponent,canActivate: [AdminAuthguardService] },
-  { path: 'updateAdmin/:id', component: UpdateAdminComponent,canActivate: [AdminAuthguardService] },
+  { path: 'signup-admin', component: SignupAdminComponent, canActivate: [AdminAuthguardService] },
+  { path: 'signout-admin', component: SignoutAdminComponent, canActivate: [AdminAuthguardService] },
+  { path: 'newsfeed-admin', component: AdminNewsfeedComponent, canActivate: [AdminAuthguardService] },
+  { path: 'admins', component: ListAdminsComponent, canActivate: [AdminAuthguardService] },
+  { path: 'updateFreelancer/:id', component: UpdateFreelancerComponent, canActivate: [AdminAuthguardService] },
+  { path: 'updateClient/:id', component: UpdateClientComponent, canActivate: [AdminAuthguardService] },
+  { path: 'updateAdmin/:id', component: UpdateAdminComponent, canActivate: [AdminAuthguardService] },
+
   { path: 'newExperience/:id', component: ExperienceComponent },
   { path: 'newCertification/:idFreelancer', component: CertificationComponent },
   {path: 'newMission/:idClient', component: AddMissionComponent},
   {path: 'newStudy/:idFreelancer', component: AddStudyComponent },
-  {path: 'newSkill/:idFreelancer', component: AddSkillComponent}
+
+  {path: 'newSkill/:idFreelancer', component: AddSkillComponent},
+  { path: 'update-freelancer-profile', component: UpdateFreelancerDataProfileComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'update-client-profile', component: UpdateClientDataProfileComponent, canActivate: [ClientAuthguardService] },
+
 ];
 
 @NgModule({

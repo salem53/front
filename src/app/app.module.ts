@@ -45,6 +45,10 @@ import { AddStudyComponent } from './add-study/add-study.component';
 import { CertificationComponent } from './certification/certification.component';
 import { ExperienceComponent } from './experience/experience.component';
 
+import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-profile/update-freelancer-data-profile.component';
+import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -85,7 +89,11 @@ import { ExperienceComponent } from './experience/experience.component';
     AddSkillComponent,
     AddStudyComponent,
     CertificationComponent,
-    ExperienceComponent
+
+    ExperienceComponent,
+    UpdateFreelancerDataProfileComponent,
+    UpdateClientDataProfileComponent
+
   ],
   imports: [
     BrowserModule,
