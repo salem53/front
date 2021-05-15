@@ -54,9 +54,21 @@ export class CertificationService {
     
     }
     );
- 
-    
   }
+
+  updateFileCertification(idFreelancer,idCertification, uploadImageData,message) {
+    // return this.Http.put(this.urlMissions  + '/updateMission',mission);
+      //Make a call to the Spring Boot Application to save the image
+      this.Http.put(this.urlFreelancerCertification+'/updateFileCertification/'+idFreelancer+'/'+idCertification, uploadImageData, { observe: 'response' })
+      .subscribe((response) => {
+        if (response.status === 200) {
+         message = 'file uploaded successfully';
+        } else {
+          message = 'file not uploaded successfully';
+        }
+      }
+      );
+   }
 
 
 }

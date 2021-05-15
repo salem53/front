@@ -21,6 +21,34 @@ export class MissionService {
   }
   updateMission(mission) {
     return this.Http.put(this.urlMissions  + '/updateMission',mission);
-  }  
+  }
+  updateFileMission(idMission, uploadImageData,message) {
+   // return this.Http.put(this.urlMissions  + '/updateMission',mission);
+     //Make a call to the Spring Boot Application to save the image
+     this.Http.put(this.urlMissions+'/updateFileMission/'+idMission, uploadImageData, { observe: 'response' })
+     .subscribe((response) => {
+       if (response.status === 200) {
+        message = 'Image uploaded successfully';
+       } else {
+         message = 'Image not uploaded successfully';
+       }
+     }
+     );
+  }
+
+  /*
+  getFile(idMission,FileName)
+  {
+    this.Http.get('this.urlMissions+'+'/getFile/'+idMission +FileName)
+      .subscribe(
+        res => {
+          this.retrieveResonse = res;
+          this.base64Data = this.retrieveResonse.picByte;
+          this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        }
+      );
+  }
+  */
+
 }
 

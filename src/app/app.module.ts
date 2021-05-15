@@ -47,6 +47,7 @@ import { ExperienceComponent } from './experience/experience.component';
 
 import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-profile/update-freelancer-data-profile.component';
 import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
+import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
 
 
 
@@ -92,7 +93,8 @@ import {UpdateClientDataProfileComponent} from './update-client-data-profile/upd
 
     ExperienceComponent,
     UpdateFreelancerDataProfileComponent,
-    UpdateClientDataProfileComponent
+    UpdateClientDataProfileComponent,
+    DashboardClientComponent
 
   ],
   imports: [

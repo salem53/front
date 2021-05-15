@@ -4,7 +4,7 @@ export class Certified{
      
     date?:Date;
      url?:String;
-     file?:FormData;
+     file?:String;
      freelancer?:Freelancer;
     certification?:Certification;
     idCertified?:IdCertified;

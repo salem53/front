@@ -1,3 +1,4 @@
+import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -80,7 +81,7 @@ const routes: Routes = [
   {path: 'newSkill/:idFreelancer', component: AddSkillComponent},
   { path: 'update-freelancer-profile', component: UpdateFreelancerDataProfileComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'update-client-profile', component: UpdateClientDataProfileComponent, canActivate: [ClientAuthguardService] },
-
+  {path: 'dashboard-client/:idClient', component: DashboardClientComponent},
 ];
 
 @NgModule({

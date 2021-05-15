@@ -23,7 +23,7 @@ export class CertificationComponent implements OnInit {
 
   newCertification(form)
     {
-      const uploadImageData = new FormData();
+     
       this.certif=
       {
         'name':form.value.name,
@@ -33,9 +33,8 @@ export class CertificationComponent implements OnInit {
       this.certified.date=form.value.date;  
       this.certified.url=form.value.url;
         
-       uploadImageData.append('file',this.selectedFile, this.selectedFile.name);   
       this.freelancer.id=parseInt(this.route.snapshot.params.idFreelancer);
-      this.certified.file= uploadImageData;   //form.value.file; 
+      this.certified.file="";  
      // console.log(parseInt(this.route.snapshot.params.idFreelancer));
       this.certified.freelancer=this.freelancer;
       this.certified.idCertified=this.idCertified;
@@ -43,7 +42,7 @@ export class CertificationComponent implements OnInit {
       this.service.getCertification(form.value.name,form.value.organism).subscribe(
         response => {
          
-          if (response[0]==null)//this experience isn't already registred
+          if (response[0]==null)//this certification isn't already registred
            {
           this.service.createNewCertification(this.certif).subscribe( responses => { 
          
@@ -51,12 +50,13 @@ export class CertificationComponent implements OnInit {
             {
               'name':form.value.name,
               'organism':form.value.organism,
-              'id':responses["id"]
+              'id':responses["id"] //idCertification
              }
         //  console.log(this.exp.id);
           this.certified.certification=this.certif; 
-          this.service.createCertification(this.certified).subscribe( responsee => { // console.log(responsee);
-          });
+          this.service.createCertification(this.certified).subscribe( responsee => {
+            this.onUpload(parseInt(this.route.snapshot.params.idFreelancer),responses["id"]);// console.log(responsee);
+          }); 
           },error => {console.log('newerror', error),this.invalid=true;});                               
          }
          else
@@ -65,11 +65,11 @@ export class CertificationComponent implements OnInit {
           {
           'company':form.value.company,
           'positionTitle':form.value.position,
-          'id':response[0]["id"]
+          'id':response[0]["id"] //idCertification
            }
            this.certified.certification=this.certif; 
           //console.log(response[0]["id"]);
-          this.service.createCertification(this.certified).subscribe( responsee => { console.log(responsee);},error => {console.log('newerror', error),this.invalid=true;});
+          this.service.createCertification(this.certified).subscribe( responsee => { console.log(responsee);this.onUpload(parseInt(this.route.snapshot.params.idFreelancer),response[0]["id"])},error => {console.log('newerror', error),this.invalid=true;});
 
          }
        
@@ -78,25 +78,24 @@ export class CertificationComponent implements OnInit {
  
         }
 
-    
-        selectedFile: File;
-          //Gets called when the user selects an image
+
+  message:String;
+  selectedFile: File;
   public onFileChanged(event) {
     //Select File
     this.selectedFile = event.target.files[0];
   }
-   //Gets called when the user clicks on submit to upload the image
-  onUpload(idf,idc) {
-    //console.log(this.selectedFile);
+
+  //Gets called when the user clicks on submit to upload the file
+  onUpload(idFreelancer,idCertification) {
+    console.log(this.selectedFile);
+    
     //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-    this.service.uploadFile(uploadImageData,idf,idc);
-   console.log('freelancer'+idf);
-   console.log('certif'+idc);
+    this.service.updateFileCertification(idFreelancer,idCertification, uploadImageData,this.message);
 
   }
-  
    
 }
 
