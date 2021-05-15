@@ -40,7 +40,8 @@ export class ClientNewsfeedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.email = sessionStorage.getItem("username");
+    this.getImage();
+    /*this.email = sessionStorage.getItem("username");
     this.firstName = sessionStorage.getItem("firstName");
     this.lastName = sessionStorage.getItem("lastName");
     this.address=sessionStorage.getItem('address');
@@ -51,7 +52,7 @@ export class ClientNewsfeedComponent implements OnInit {
     this.rating=sessionStorage.getItem('rating');
     this.sexe=sessionStorage.getItem('sexe');
     this.telephone_number=sessionStorage.getItem('telephone_number');
-    this.nationality=sessionStorage.getItem('nationality');
+    this.nationality=sessionStorage.getItem('nationality');*/
   }
 
   onChange(event) {
@@ -90,8 +91,37 @@ export class ClientNewsfeedComponent implements OnInit {
         res => {
 
           this.freelancer = res;
-          this.base64Data = this.freelancer.image;
-          this.Image = 'data:image/jpeg;base64,' + this.base64Data;
+          if(this.freelancer.image!=null){
+            this.base64Data = this.freelancer.image;
+            this.Image = 'data:image/jpeg;base64,' + this.base64Data;
+          }
+
+
+          this.email=this.freelancer.email;
+          this.firstName=this.freelancer.firstName;
+          this.lastName=this.freelancer.lastName;
+          this.address=this.freelancer.address;
+          this.description=this.freelancer.description;
+          this.earning=this.freelancer.earning;
+          this.inscription_date=this.freelancer.inscriptionDate;
+          this.job=this.freelancer.job;
+          this.rating=this.freelancer.rating;
+          this.sexe=this.freelancer.rating;
+          this.telephone_number=this.freelancer.telephoneNumber;
+          this.nationality=this.freelancer.nationality;
+
+          sessionStorage.setItem("username",this.email);
+          sessionStorage.setItem("firstName",this.firstName);
+          sessionStorage.setItem("lastName",this.lastName);
+          sessionStorage.setItem('address',this.address);
+          sessionStorage.setItem('description',this.description);
+          sessionStorage.setItem('earning',this.earning);
+          sessionStorage.setItem('inscription_date', this.inscription_date);
+          sessionStorage.setItem('job',this.job);
+          sessionStorage.setItem('rating',this.rating);
+          sessionStorage.setItem('sexe',this.sexe);
+          sessionStorage.setItem('telephone_number', this.telephone_number);
+          sessionStorage.setItem('nationality',this.nationality);
         }
       );
 

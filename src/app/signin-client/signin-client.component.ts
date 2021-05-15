@@ -71,7 +71,7 @@ export class SigninClientComponent implements OnInit {
         if (this.password_verification == this.password) {
           sessionStorage.setItem('username', this.username);
           /*sessionStorage.setItem('password', password)*/
-          sessionStorage.setItem('role', "freelancer");
+          sessionStorage.setItem('role', 'client');
           sessionStorage.setItem('firstName', this.firstName);
           sessionStorage.setItem('lastName', this.lastName);
           sessionStorage.setItem('address', this.address);
@@ -86,13 +86,13 @@ export class SigninClientComponent implements OnInit {
 
           // @ts-ignore
           this.invalidLogin = false;
-          this.router.navigate(['newsfeed-client'])
+          this.router.navigate(['newsfeed-client']);
 
           return true;
         }
         else {
           this.invalidLogin = true;
-          this.router.navigate(['signin-client'])
+          this.router.navigate(['signin-client']);
 
           return true;
         }
