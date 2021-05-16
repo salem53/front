@@ -70,6 +70,11 @@ export class CertificationService {
       );
    }
 
+   getListOfCertification(idFreelancer) // return the list of eductional experiences of a certain freelancer
+   {
+    return this.Http.get(this.urlFreelancerCertification +'/listCertificationByIdFreelancer/'+idFreelancer);
+   }
+
 
 }
 

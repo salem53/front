@@ -41,4 +41,8 @@ export class ServiceExperienceService {
     return this.Http.get(this.urlFreelancerExperience +'/getHavingExperienceById/'+idFreelancer+'/'+idExperience);
   }
 
+  getListOfExperiences(idFreelancer) // return the list of eductional experiences of a certain freelancer
+  {
+   return this.Http.get(this.urlFreelancerExperience +'/listByIdFreelancer/'+idFreelancer);
+  }
 }

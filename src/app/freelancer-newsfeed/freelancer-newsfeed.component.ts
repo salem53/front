@@ -1,3 +1,7 @@
+import { CertificationService } from './../services/InfosFreelancer/certification.service';
+import { ServiceExperienceService } from './../services/InfosFreelancer/service-experience.service';
+
+import { StudyService } from './../services/InfosFreelancer/study.service';
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -15,8 +19,8 @@ export class FreelancerNewsfeedComponent implements OnInit {
 
   // pdf contenent
 
-  constructor(private httpClient: HttpClient) {
-
+  constructor(private httpClient: HttpClient, private studyService: StudyService,private experienceService: ServiceExperienceService,private certificationService: CertificationService ) {
+    //this.getInformations();
     this.getImage();
   }
 
@@ -24,7 +28,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
   // image details
   selectedFile: File;
 
-  Image = 'https://bootdey.com/img/Content/avatar/avatar7.png';
+  Image = 'data:image/jpeg;base64,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';
 
   base64Data: any;
 
@@ -141,6 +145,10 @@ export class FreelancerNewsfeedComponent implements OnInit {
     }
   };
 
+  listStudies:any;
+  listExperiences:any;
+  listCertifications:any;
+  idFreelancer : String;
   ngOnInit(): void {
     this.email = sessionStorage.getItem("username");
     this.firstName = sessionStorage.getItem("firstName");
@@ -155,6 +163,11 @@ export class FreelancerNewsfeedComponent implements OnInit {
     this.telephone_number=sessionStorage.getItem('telephone_number');
     this.nationality=sessionStorage.getItem('nationality');
 
+    this.idFreelancer=sessionStorage.getItem("id");
+    this.studyService.getListOfEducation(this.idFreelancer).subscribe(response=>{this.listStudies=response;});
+  this.experienceService.getListOfExperiences(this.idFreelancer).subscribe(response=>{this.listExperiences=response;});
+  this.certificationService.getListOfCertification(this.idFreelancer).subscribe(response=>{this.listCertifications=response;});
+  console.log(this.listStudies);
 
   }
 
@@ -164,13 +177,13 @@ export class FreelancerNewsfeedComponent implements OnInit {
 
   onChange(event) {
     this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
+   // console.log(this.selectedFile);
     this.onUpload();
   }
 
   onUpload() {
-    console.log('upload');
-    console.log(this.selectedFile);
+    /*console.log('upload');
+    console.log(this.selectedFile);*/
 
     // FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
@@ -196,7 +209,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
         res => {
 
           this.freelancer = res;
-          console.log(this.freelancer.image);
+          //console.log(this.freelancer.image);
           if(this.freelancer.image != null) {
             this.base64Data = this.freelancer.image;
             this.Image = 'data:image/jpeg;base64,' + this.base64Data;
@@ -250,4 +263,17 @@ export class FreelancerNewsfeedComponent implements OnInit {
 
     pdfMake.createPdf(this.docDefinition).download();
   }
+
+
+
+  
+  /*getInformations()
+  {
+   this.idFreelancer=sessionStorage.getItem("id");
+    this.studyService.getListOfEducation(this.idFreelancer).subscribe(response=>{this.x=response[1]["education"];//console.log(response[1]["education"])
+  });
+  console.log(this.x);
+  }
+*/
+
 }

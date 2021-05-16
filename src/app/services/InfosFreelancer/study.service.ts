@@ -20,9 +20,14 @@ export class StudyService {
   return this.Http.post(this.urlEducation+'/addEducation',education);
  }
 
- getEducation(school,degree)
+ getEducation(school,degree)//return a list of education with a certain school name and degree
  {
   return this.Http.get(this.urlEducation +'/getEducationBySchoolAndDegree/'+school+'/'+degree);
  }
  
+ getListOfEducation(idFreelancer) // return the list of eductional experiences of a certain freelancer
+ {
+  return this.Http.get(this.urlStudy +'/listByIdFreelancer/'+idFreelancer);
+ }
+
 }
