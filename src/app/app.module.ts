@@ -51,11 +51,11 @@ import { DashboardClientComponent } from './dashboard-client/dashboard-client.co
 import { BrowseProjectsComponent } from './browse-projects/browse-projects.component';
 import { PostProjectsComponent } from './post-projects/post-projects.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import {MatIconModule} from '@angular/material/icon';
+/*import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatChipsModule} from '@angular/material/chips';
+import {MatChipsModule} from '@angular/material/chips';*/
 
 import { SearchMissionComponent } from './search-mission/search-mission.component';
 import { SearchFreelancerComponent } from './search-freelancer/search-freelancer.component';
@@ -122,10 +122,10 @@ import { SearchFreelancerComponent } from './search-freelancer/search-freelancer
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatIconModule, MatInputModule,
+   /* MatIconModule, MatInputModule,
     MatAutocompleteModule,
     MatChipsModule,
-    MatFormFieldModule
+    MatFormFieldModule*/
 
   ],
   providers: [],
