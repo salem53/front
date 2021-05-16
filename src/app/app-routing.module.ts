@@ -40,6 +40,8 @@ import { AddSkillComponent } from './add-skill/add-skill.component';
 
 import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-profile/update-freelancer-data-profile.component';
 import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
+import {PostProjectsComponent} from './post-projects/post-projects.component';
+import {BrowseProjectsComponent} from './browse-projects/browse-projects.component';
 
 
 const routes: Routes = [
@@ -58,11 +60,14 @@ const routes: Routes = [
 
   { path: 'signout-freelancer', component: SignoutFreelancerComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'newsfeed-freelancer', component: FreelancerNewsfeedComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'browse-project', component: BrowseProjectsComponent, canActivate: [FreelancerAuthGuardService] },
+
   { path: 'freelancers', component: ListFreelancersComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-client', component: SigninClientComponent },
   { path: 'signup-client', component: SignupClientComponent },
   { path: 'signout-client', component: SignoutClientComponent, canActivate: [ClientAuthguardService] },
   { path: 'newsfeed-client', component: ClientNewsfeedComponent , canActivate: [ClientAuthguardService]},
+  { path: 'post-project', component: PostProjectsComponent , canActivate: [ClientAuthguardService]},
   { path: 'clients', component: ListClientsComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-admin', component: SigninAdminComponent },
   { path: 'signup-admin', component: SignupAdminComponent, canActivate: [AdminAuthguardService] },

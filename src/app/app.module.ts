@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -37,7 +37,7 @@ import { PdfTestComponent } from './pdf-test/pdf-test.component';
 import { PhotosVideosComponent } from './profile/photos-videos/photos-videos.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
 import { ProfileAboutComponent } from './profile/profile-about/profile-about.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from "@angular/router";
 import { AddMissionComponent } from './add-mission/add-mission.component';
 import { AddSkillComponent } from './add-skill/add-skill.component';
@@ -48,7 +48,18 @@ import { ExperienceComponent } from './experience/experience.component';
 import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-profile/update-freelancer-data-profile.component';
 import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
 import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
+import { BrowseProjectsComponent } from './browse-projects/browse-projects.component';
+import { PostProjectsComponent } from './post-projects/post-projects.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+// @ts-ignore
+import {
 
+  MatIconModule, MatInputModule,
+  MatAutocompleteModule, MatChipsModule,
+  MatFormFieldModule
+
+
+} from '@angular/material';
 
 
 @NgModule({
@@ -94,7 +105,10 @@ import { DashboardClientComponent } from './dashboard-client/dashboard-client.co
     ExperienceComponent,
     UpdateFreelancerDataProfileComponent,
     UpdateClientDataProfileComponent,
-    DashboardClientComponent
+    DashboardClientComponent,
+    BrowseProjectsComponent,
+    PostProjectsComponent,
+    SearchBarComponent
 
   ],
   imports: [
@@ -104,6 +118,11 @@ import { DashboardClientComponent } from './dashboard-client/dashboard-client.co
     HttpClientModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    MatIconModule, MatInputModule,
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatFormFieldModule
 
   ],
   providers: [],
