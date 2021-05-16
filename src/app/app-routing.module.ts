@@ -42,6 +42,7 @@ import {UpdateFreelancerDataProfileComponent} from './update-freelancer-data-pro
 import {UpdateClientDataProfileComponent} from './update-client-data-profile/update-client-data-profile.component';
 import {PostProjectsComponent} from './post-projects/post-projects.component';
 import {BrowseProjectsComponent} from './browse-projects/browse-projects.component';
+import {SearchBarComponent} from './search-bar/search-bar.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'paypal', component: PaypalTestComponent },
   { path: 'pdfTest', component: PdfTestComponent },
+  { path: 'search', component: SearchBarComponent },
+
   { path: 'test', component: TestFlaskComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },

@@ -51,15 +51,15 @@ import { DashboardClientComponent } from './dashboard-client/dashboard-client.co
 import { BrowseProjectsComponent } from './browse-projects/browse-projects.component';
 import { PostProjectsComponent } from './post-projects/post-projects.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-// @ts-ignore
-import {
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatChipsModule} from '@angular/material/chips';
 
-  MatIconModule, MatInputModule,
-  MatAutocompleteModule, MatChipsModule,
-  MatFormFieldModule
+import { SearchMissionComponent } from './search-mission/search-mission.component';
+import { SearchFreelancerComponent } from './search-freelancer/search-freelancer.component';
 
-
-} from '@angular/material';
 
 
 @NgModule({
@@ -108,7 +108,10 @@ import {
     DashboardClientComponent,
     BrowseProjectsComponent,
     PostProjectsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+
+    SearchMissionComponent,
+    SearchFreelancerComponent
 
   ],
   imports: [
