@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./add-mission.component.css']
 })
 export class AddMissionComponent implements OnInit {
- 
+
   idMission:number=0;
   constructor(private router : Router, private route: ActivatedRoute,private service: MissionService) { }
   freelancer:any={};
@@ -42,8 +42,10 @@ client:any={};
     'technologies':form.value.technologies,
     'contrat':""
     }
-    this.service.createMission(this.mission).subscribe(result=>{this.personnes=result;this.idMission=result["id"]; console.log(result["id"]);this.onUpload(result["id"])});
-   
+    this.service.createMission(this.mission).subscribe(result=>{this.personnes=result;this.idMission=result["id"]; console.log(result["id"]);this.onUpload(result["id"]);
+    this.router.navigate(['post-project']);
+    });
+
   }
 
   message:String;
@@ -56,7 +58,7 @@ client:any={};
   //Gets called when the user clicks on submit to upload the file
   onUpload(idMission) {
     console.log(this.selectedFile);
-    
+
     //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
@@ -65,6 +67,6 @@ client:any={};
   }
 
 
-  
+
 
 }

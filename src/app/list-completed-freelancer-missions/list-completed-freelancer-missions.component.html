@@ -1,0 +1,29 @@
+<header id="head" class="secondary"></header>
+
+<ol class="breadcrumb" routerLinkActive="active">
+  <li><a routerLink="/home">Home</a></li>
+  <li class="active">List Of Completed Missions</li>
+</ol>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Project Title</th>
+    <th>Client Name</th>
+    <th>Client Email</th>
+    <th>Mission Price</th>
+    <th>Give Feedback to Client (You can Do it just once)</th>
+  </tr>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let mission of completedMissions">
+    <td>{{mission.title}}</td>
+    <td>{{mission.client.firstName}} {{mission.client.lastName}}</td>
+    <td>{{mission.client.email}}</td>
+    <td>{{mission.averagePayment}}$</td>
+    <td><button (click)="giveFeedback()" class="btn btn-warning">Give Feedback</button></td>
+  </tr>
+  </tbody>
+
+
+</table>

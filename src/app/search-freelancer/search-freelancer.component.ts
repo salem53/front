@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-freelancer.component.css']
 })
 export class SearchFreelancerComponent implements OnInit {
-
-  constructor() { }
+  id ;
+  constructor() {
+    this.id = sessionStorage.getItem('id');
+  }
 
   ngOnInit(): void {
   }
