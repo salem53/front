@@ -3,20 +3,18 @@ import { Freelancer } from "../freelancer/freelancer";
 
 export class Skilled{
 
-    id?:SkilledId;
+    idSkilled?:IdSkilled;
     freelancer?:Freelancer;
     skill?:Skill;
     
 }
-export class SkilledId
+export class IdSkilled
 {
-    freelancerId?:number;
-    skillId?:number;
+    idFreelancer?:number;
+    idSkill?:number;
 }
 export class Skill{
     name?:String;
     id?:number;
-
-
 
 }

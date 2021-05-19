@@ -1,3 +1,4 @@
+import { FlaskServiceService } from './../services/flask/flask-service.service';
 import { Component, OnInit } from '@angular/core';
 import {MissionService} from '../services/missions/mission.service';
 
@@ -10,6 +11,12 @@ export class BrowseProjectsComponent implements OnInit {
   currentMissions;
   constructor(public missionService: MissionService) {
 
+
+  listRecommendedOffers:any[];
+
+  constructor(private flaskService : FlaskServiceService) { 
+    this.getOffers();
+
   }
 
   ngOnInit(): void {
@@ -20,11 +27,23 @@ export class BrowseProjectsComponent implements OnInit {
       localStorage.setItem('firstReload', 'true');
     }
 
+
     this.missionService.getHiredMissionsForFreelancer(sessionStorage.getItem('id'))
       .subscribe(missions => {
         this.currentMissions =missions;
         console.log(this.currentMissions);
       })
+
+
+
+  }
+
+  getOffers()
+  {
+    this.flaskService.getRecommendedOffers(1).subscribe(resultat=>{
+      this.listRecommendedOffers=resultat['liste'];
+      console.log(localStorage.getItem("id")); //resultat['liste'][0]
+    });
 
   }
 
