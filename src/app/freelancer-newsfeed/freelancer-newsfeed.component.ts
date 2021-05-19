@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { SkillService } from '../services/InfosFreelancer/skill.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 @Component({
   selector: 'app-freelancer-newsfeed',
@@ -19,11 +20,21 @@ export class FreelancerNewsfeedComponent implements OnInit {
 
   // pdf contenent
 
-  constructor(private httpClient: HttpClient, private studyService: StudyService,private experienceService: ServiceExperienceService,private certificationService: CertificationService ) {
+  constructor(private httpClient: HttpClient, private studyService: StudyService,private experienceService: ServiceExperienceService,private certificationService: CertificationService,private skillService:SkillService ) {
     //this.getInformations();
     this.getImage();
+    this.idFreelancer=sessionStorage.getItem("id");
+    this.studyService.getListOfEducation(this.idFreelancer).subscribe(response=>{this.listStudies=response;});
+  this.experienceService.getListOfExperiences(this.idFreelancer).subscribe(response=>{this.listExperiences=response;});
+  this.certificationService.getListOfCertification(this.idFreelancer).subscribe(response=>{this.listCertifications=response;});
+  this.skillService.getAllSkill(this.idFreelancer).subscribe(response=>{this.listSkills=response;});
+  console.log(this.listSkills);
   }
-
+  listStudies:any;
+  listExperiences:any;
+  listCertifications:any;
+  idFreelancer : String;
+  listSkills:any;
 
   // image details
   selectedFile: File;
@@ -145,10 +156,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
     }
   };
 
-  listStudies:any;
-  listExperiences:any;
-  listCertifications:any;
-  idFreelancer : String;
+  
   ngOnInit(): void {
     this.email = sessionStorage.getItem("username");
     this.firstName = sessionStorage.getItem("firstName");
@@ -163,11 +171,8 @@ export class FreelancerNewsfeedComponent implements OnInit {
     this.telephone_number=sessionStorage.getItem('telephone_number');
     this.nationality=sessionStorage.getItem('nationality');
 
-    this.idFreelancer=sessionStorage.getItem("id");
-    this.studyService.getListOfEducation(this.idFreelancer).subscribe(response=>{this.listStudies=response;});
-  this.experienceService.getListOfExperiences(this.idFreelancer).subscribe(response=>{this.listExperiences=response;});
-  this.certificationService.getListOfCertification(this.idFreelancer).subscribe(response=>{this.listCertifications=response;});
-  console.log(this.listStudies);
+  
+    
 
   }
 

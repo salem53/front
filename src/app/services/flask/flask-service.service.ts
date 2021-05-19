@@ -10,4 +10,8 @@ export class FlaskServiceService {
   getHelloWorld()  {
     return this.Http.get(this.urlFlask);
   }
+  getRecommendedOffers(idFreelancer)
+  {
+      return this.Http.get<any[]>(this.urlFlask+'/recommandOffer/'+idFreelancer);
+  }
 }
