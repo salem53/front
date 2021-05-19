@@ -9,15 +9,11 @@ import {MissionService} from '../services/missions/mission.service';
 })
 export class BrowseProjectsComponent implements OnInit {
   currentMissions;
-  constructor(public missionService: MissionService) {
-
+  constructor(public missionService: MissionService,private flaskService : FlaskServiceService) {this.getOffers();}
 
   listRecommendedOffers:any[];
 
-  constructor(private flaskService : FlaskServiceService) { 
-    this.getOffers();
-
-  }
+ 
 
   ngOnInit(): void {
     if (!localStorage.getItem('firstReload') || localStorage.getItem('firstReload') === 'true') {
@@ -27,13 +23,11 @@ export class BrowseProjectsComponent implements OnInit {
       localStorage.setItem('firstReload', 'true');
     }
 
-
     this.missionService.getHiredMissionsForFreelancer(sessionStorage.getItem('id'))
       .subscribe(missions => {
         this.currentMissions =missions;
         console.log(this.currentMissions);
       })
-
 
 
   }
@@ -44,7 +38,6 @@ export class BrowseProjectsComponent implements OnInit {
       this.listRecommendedOffers=resultat['liste'];
       console.log(localStorage.getItem("id")); //resultat['liste'][0]
     });
-
   }
 
 }
