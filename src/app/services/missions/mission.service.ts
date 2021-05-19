@@ -9,12 +9,30 @@ export class MissionService {
   constructor(private Http: HttpClient) { }
   createMission(mission) // add a mission related to a client
   {
-   
+
     return this.Http.post(this. urlMissions+'/addMission',mission);
   }
   getMissionById(id)
   {
     return this.Http.get(this.urlMissions +'/getMission/'+id);
+  }
+  getHiredMissions(){
+    return this.Http.get(this.urlMissions +'/getHiredMissions');
+  }
+  getHiredMissionsForClient(clientId){
+    return this.Http.get(this.urlMissions +'/getHiredMissions/clients/'+clientId);
+  }
+  getCompletedMissionsForClient(clientId){
+    return this.Http.get(this.urlMissions +'/getCompletedMissions/clients/'+clientId);
+  }
+  getHiredMissionsForFreelancer(freelancerId){
+    return this.Http.get(this.urlMissions +'/getHiredMissions/freelancers/'+freelancerId);
+  }
+  getCompletedMissionsForFreelancer(freelancerId){
+    return this.Http.get(this.urlMissions +'/getCompletedMissions/freelancers/'+freelancerId);
+  }
+  setMissionAsCompleted(missionId){
+    return this.Http.get(this.urlMissions +'/setMissionAsCompleted/mission/'+missionId);
   }
   deleteMission(id) {
     return this.Http.delete(this.urlMissions +'/deleteMission/'+id);

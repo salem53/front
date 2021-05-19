@@ -54,6 +54,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 
 import { SearchMissionComponent } from './search-mission/search-mission.component';
 import { SearchFreelancerComponent } from './search-freelancer/search-freelancer.component';
+import { ListCompletedClientMissionsComponent } from './list-completed-client-missions/list-completed-client-missions.component';
+import { ListCompletedFreelancerMissionsComponent } from './list-completed-freelancer-missions/list-completed-freelancer-missions.component';
 
 
 
@@ -106,7 +108,9 @@ import { SearchFreelancerComponent } from './search-freelancer/search-freelancer
     SearchBarComponent,
 
     SearchMissionComponent,
-    SearchFreelancerComponent
+    SearchFreelancerComponent,
+    ListCompletedClientMissionsComponent,
+    ListCompletedFreelancerMissionsComponent
 
   ],
   imports: [

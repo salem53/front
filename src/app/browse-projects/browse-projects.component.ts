@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MissionService} from '../services/missions/mission.service';
 
 @Component({
   selector: 'app-browse-projects',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./browse-projects.component.css']
 })
 export class BrowseProjectsComponent implements OnInit {
+  currentMissions;
+  constructor(public missionService: MissionService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
     if (!localStorage.getItem('firstReload') || localStorage.getItem('firstReload') === 'true') {
@@ -16,6 +19,13 @@ export class BrowseProjectsComponent implements OnInit {
     } else {
       localStorage.setItem('firstReload', 'true');
     }
+
+    this.missionService.getHiredMissionsForFreelancer(sessionStorage.getItem('id'))
+      .subscribe(missions => {
+        this.currentMissions =missions;
+        console.log(this.currentMissions);
+      })
+
   }
 
 }

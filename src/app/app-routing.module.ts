@@ -43,6 +43,8 @@ import {UpdateClientDataProfileComponent} from './update-client-data-profile/upd
 import {PostProjectsComponent} from './post-projects/post-projects.component';
 import {BrowseProjectsComponent} from './browse-projects/browse-projects.component';
 import {SearchBarComponent} from './search-bar/search-bar.component';
+import {ListCompletedFreelancerMissionsComponent} from './list-completed-freelancer-missions/list-completed-freelancer-missions.component';
+import {ListCompletedClientMissionsComponent} from './list-completed-client-missions/list-completed-client-missions.component';
 
 
 const routes: Routes = [
@@ -51,6 +53,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'paypal', component: PaypalTestComponent },
   { path: 'pdfTest', component: PdfTestComponent },
+  { path: 'paypal/:id/:money', component: PaypalTestComponent },
   { path: 'search', component: SearchBarComponent },
 
   { path: 'test', component: TestFlaskComponent },
@@ -64,6 +67,7 @@ const routes: Routes = [
   { path: 'signout-freelancer', component: SignoutFreelancerComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'newsfeed-freelancer', component: FreelancerNewsfeedComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'browse-project', component: BrowseProjectsComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'list-completed-freelancer-mission', component: ListCompletedFreelancerMissionsComponent, canActivate: [FreelancerAuthGuardService] },
 
   { path: 'freelancers', component: ListFreelancersComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-client', component: SigninClientComponent },
@@ -71,6 +75,7 @@ const routes: Routes = [
   { path: 'signout-client', component: SignoutClientComponent, canActivate: [ClientAuthguardService] },
   { path: 'newsfeed-client', component: ClientNewsfeedComponent , canActivate: [ClientAuthguardService]},
   { path: 'post-project', component: PostProjectsComponent , canActivate: [ClientAuthguardService]},
+  { path: 'list-completed-client-mission', component: ListCompletedClientMissionsComponent , canActivate: [ClientAuthguardService]},
   { path: 'clients', component: ListClientsComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-admin', component: SigninAdminComponent },
   { path: 'signup-admin', component: SignupAdminComponent, canActivate: [AdminAuthguardService] },

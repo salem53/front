@@ -214,7 +214,7 @@
       </div>
       <aside class="sidebar">
         <div class="category">
-          <h2>Category</h2>
+          <h1><b>Category</b></h1>
           <ul class="category-list">
             <li class="list-items" data-aos="fade-left" data-aos-delay="100">
               <a href="#">Software</a>
@@ -238,83 +238,109 @@
             </li>
           </ul>
         </div>
-        <div class="popular-post">
-          <h2>Popular Post</h2>
-          <div class="post-content" data-aos="flip-up" data-aos-delay="200">
-            <div class="post-image">
-              <div>
-                <img src="./assets/popular-post/m-blog-1.jpg" class="img" alt="blog1">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="popular-post mb-lg-3">
+          <h1><b>Projects To Finish :</b></h1>
+          <div *ngFor="let mission of currentMissions; i as a" class="post-content" data-aos="flip-up" data-aos-delay="200">
+
+            <div style="width:400px" class="card" data-aos="flip-up" data-aos-delay={{a+100}}>
+              <div class="card-header "style="background: #FF8C00;color:whitesmoke">
+                <h1><b>Project Title : {{mission.title}}</b></h1>
               </div>
-              <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                <span>2 Commets</span>
+              <div class="card-body" style="font-size:16px;">
+                <p><b><em>Project Description : </em></b>{{mission.description}}.</p>
+                <p><b><em>Project Technologies : </em></b>{{mission.technologies}}.</p>
+                <p><b><em>Your Client Name : </em></b>{{mission.client.firstName}} {{mission.client.lastName}}.</p>
+                <p><b><em>Your Client  Email : </em></b>{{mission.client.email}}.</p>
+                <p><b><em>Your Client r Telephone Number : </em></b>{{mission.client.telephoneNumber}}.</p>
+                <p><b><em>Your Client  Nationality : </em></b>{{mission.client.nationality}}.</p>
+                <p><b><em>Benefits to Get : </em></b>{{mission.averagePayment}}$ .</p>
+
+                <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a style="font-size:16px;height: 40px;width:120px; " routerLink="/paypal/{{mission.id}}/{{mission.averagePayment}}" class="btn btn-primary">Money To Pay</a>-->
               </div>
-            </div>
-            <div class="post-title">
-              <a href="#">New data recording system to better analyse road accidents</a>
             </div>
           </div>
-          <div class="post-content" data-aos="flip-up" data-aos-delay="300">
-            <div class="post-image">
-              <div>
-                <img src="./assets/popular-post/m-blog-2.jpg" class="img" alt="blog1">
-              </div>
-              <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                <span>2 Commets</span>
-              </div>
+          <!--<div class="post-title">
+            <a href="#">New data recording system to better analyse road accidents</a>
+          </div>-->
+          <!--<div clvass="post-image">
+            <div>
+              <img src="./assets/popular-post/m-blog-1.jpg" class="img" alt="blog1">
             </div>
-            <div class="post-title">
-              <a href="#">New data recording system to better analyse road accidents</a>
+            <div class="post-info flex-row">
+                                  <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                      2019</span>
+              <span>2 Commets</span>
             </div>
           </div>
-          <div class="post-content" data-aos="flip-up" data-aos-delay="400">
-            <div class="post-image">
-              <div>
-                <img src="./assets/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+          <div class="post-title">
+            <a href="#">New data recording system to better analyse road accidents</a>
+          </div>-->
+
+          <!-- <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+             <div class="post-image">
+               <div>
+                 <img src="./assets/popular-post/m-blog-2.jpg" class="img" alt="blog1">
+               </div>
+               <div class="post-info flex-row">
+                                     <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                         2019</span>
+                 <span>2 Commets</span>
+               </div>
+             </div>
+             <div class="post-title">
+               <a href="#">New data recording system to better analyse road accidents</a>
+             </div>
+           </div>-->
+          <!--  <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+              <div class="post-image">
+                <div>
+                  <img src="./assets/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+                </div>
+                <div class="post-info flex-row">
+                                      <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                          2019</span>
+                  <span>2 Commets</span>
+                </div>
               </div>
-              <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                <span>2 Commets</span>
+              <div class="post-title">
+                <a href="#">New data recording system to better analyse road accidents</a>
               </div>
-            </div>
-            <div class="post-title">
-              <a href="#">New data recording system to better analyse road accidents</a>
-            </div>
-          </div>
-          <div class="post-content" data-aos="flip-up" data-aos-delay="500">
-            <div class="post-image">
-              <div>
-                <img src="./assets/popular-post/m-blog-4.jpg" class="img" alt="blog1">
+            </div>-->
+          <!--   <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+               <div class="post-image">
+                 <div>
+                   <img src="./assets/popular-post/m-blog-4.jpg" class="img" alt="blog1">
+                 </div>
+                 <div class="post-info flex-row">
+                                       <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                           2019</span>
+                   <span>2 Commets</span>
+                 </div>
+               </div>
+               <div class="post-title">
+                 <a href="#">New data recording system to better analyse road accidents</a>
+               </div>
+             </div>-->
+          <!--  <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+              <div class="post-image">
+                <div>
+                  <img src="./assets/popular-post/m-blog-5.jpg" class="img" alt="blog1">
+                </div>
+                <div class="post-info flex-row">
+                                      <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                          2019</span>
+                  <span>2 Commets</span>
+                </div>
               </div>
-              <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                <span>2 Commets</span>
+              <div class="post-title">
+                <a href="#">New data recording system to better analyse road accidents</a>
               </div>
-            </div>
-            <div class="post-title">
-              <a href="#">New data recording system to better analyse road accidents</a>
-            </div>
-          </div>
-          <div class="post-content" data-aos="flip-up" data-aos-delay="600">
-            <div class="post-image">
-              <div>
-                <img src="./assets/popular-post/m-blog-5.jpg" class="img" alt="blog1">
-              </div>
-              <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                <span>2 Commets</span>
-              </div>
-            </div>
-            <div class="post-title">
-              <a href="#">New data recording system to better analyse road accidents</a>
-            </div>
-          </div>
+            </div>-->
         </div>
         <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
           <h2>Newsletter</h2>
