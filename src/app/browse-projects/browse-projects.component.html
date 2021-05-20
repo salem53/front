@@ -115,6 +115,9 @@
   <section class="container">
     <div class="site-content">
       <div class="posts">
+        
+<!--
+
         <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
           <div class="post-image">
             <div>
@@ -138,6 +141,9 @@
             <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
+
+      -->
+<!--
         <hr>
         <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
           <div class="post-image">
@@ -162,27 +168,39 @@
           </div>
         </div>
         <hr>
-        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+      -->
+      
+        <h2>Recommended Missions:</h2>
+        <br> <br>
+        <div class="post-content" data-aos="zoom-in" data-aos-delay="200" *ngFor="let offer of listOffers">
           <div class="post-image">
             <div>
               <img src="./assets/Blog-post/blog3.png" class="img" alt="blog1">
             </div>
+            <!--
             <div class="post-info flex-row">
               <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
               <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 19, 2019</span>
               <span>5 Commets</span>
             </div>
+          -->
           </div>
           <div class="post-title">
-            <a href="#">New data recording system to better analyse road accidents</a>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-              adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-              nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-              illum similique veniam tempore unde?
-            </p>
+            <p>Mission:{{offer[3]}}</p>
+            <p> Description: {{offer[4]}}</p>
+            <p> Begining date:: {{offer[2]}}</p>
+            <p> Duration:: {{offer[5]}} days</p>
+            <p> Technologies:: {{offer[7]}}</p>
+            <p> Average payment:: {{offer[1]}}</p>
+           <!-- <div>
+              <a href={{offer[6]}}>exemple</a>
+            </div>
+          -->
             <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
+
+<!--
         <hr>
         <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
           <div class="post-image">
@@ -205,6 +223,8 @@
             <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
+
+      -->
         <div class="pagination flex-row">
           <a href="#"><i class="fas fa-chevron-left"></i></a>
           <a href="#" class="pages">1</a>
@@ -213,6 +233,8 @@
           <a href="#"><i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
+      
+
       <aside class="sidebar">
         <div class="category">
           <h1><b>Category</b></h1>
@@ -343,6 +365,8 @@
               </div>
             </div>-->
         </div>
+
+          <!--
         <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
           <h2>Newsletter</h2>
           <div class="form-element">
@@ -350,6 +374,9 @@
             <button class="btn form-btn">Subscribe</button>
           </div>
         </div>
+      -->
+
+      <!--
         <div class="popular-tags">
           <h2>Popular Tags</h2>
           <div class="tags flex-row">
@@ -363,6 +390,8 @@
             <span class="tag" data-aos="flip-up" data-aos-delay="800">project</span>
           </div>
         </div>
+      -->
+
       </aside>
     </div>
   </section>

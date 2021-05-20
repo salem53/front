@@ -1,3 +1,4 @@
+import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
 import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -95,6 +96,7 @@ const routes: Routes = [
   { path: 'update-freelancer-profile', component: UpdateFreelancerDataProfileComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'update-client-profile', component: UpdateClientDataProfileComponent, canActivate: [ClientAuthguardService] },
   {path: 'dashboard-client/:idClient', component: DashboardClientComponent},
+  {path: 'invite-freelancer/:idMission',component: InviteFreelancerComponent}
 ];
 
 @NgModule({
