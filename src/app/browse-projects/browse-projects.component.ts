@@ -1,3 +1,4 @@
+import { FlaskServiceService } from './../services/flask/flask-service.service';
 import { Component, OnInit } from '@angular/core';
 import {MissionService} from '../services/missions/mission.service';
 
@@ -8,9 +9,11 @@ import {MissionService} from '../services/missions/mission.service';
 })
 export class BrowseProjectsComponent implements OnInit {
   currentMissions;
-  constructor(public missionService: MissionService) {
+  constructor(public missionService: MissionService,private flaskService : FlaskServiceService) {this.getOffers();}
 
-  }
+  listRecommendedOffers:any[];
+
+ 
 
   ngOnInit(): void {
     if (!localStorage.getItem('firstReload') || localStorage.getItem('firstReload') === 'true') {
@@ -26,6 +29,15 @@ export class BrowseProjectsComponent implements OnInit {
         console.log(this.currentMissions);
       })
 
+
+  }
+
+  getOffers()
+  {
+    this.flaskService.getRecommendedOffers(1).subscribe(resultat=>{
+      this.listRecommendedOffers=resultat['liste'];
+      console.log(localStorage.getItem("id")); //resultat['liste'][0]
+    });
   }
 
 }
