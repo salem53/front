@@ -1,0 +1,106 @@
+<header id="head" class="secondary"></header>
+<br> <br>
+<h1><b>Freelancers that have one of these skills <i style="color:darkred">{{skills}}</i> :</b></h1>
+<br> <br>
+<div class="row  popular-post mb-lg-3 " data-aos="flip-up" data-aos-delay="200">
+
+  <div  *ngFor="let f of freelancers; i as a" class="col-sm-5 col-sm-offset-1 mb-lg-3 post-content" data-aos="flip-up" data-aos-delay="200">
+
+    <div  style="width:500px" class="  card" >
+      <div class="card-header "style="background: #FF8C00;color:whitesmoke">
+        <h1><b>Freelancer Name : {{f.freelancer.firstName}} {{f.freelancer.lastName}}</b></h1>
+      </div>
+      <div class="car-body" style="font-size:16px;">
+        <p><b><em>Freelancer Description : </em></b>{{f.freelancer.description}}.</p>
+        <p><b><em>Freelancer Skills : </em></b>{{f.skills}}.</p>
+        <p><b><em>Freelancer Price per Hour: </em></b>{{f.freelancer.earning}}$.</p>
+
+        <p><b><em>Freelancer Email : </em></b>{{f.freelancer.email}}.</p>
+        <p><b><em>Freelancer Telephone Number : </em></b>{{f.freelancer.telephoneNumber}}.</p>
+        <p><b><em>Freelancer  Nationality : </em></b>{{f.freelancer.nationality}}.</p>
+
+
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a style="font-size:16px;height: 40px;width:120px; " routerLink="/paypal/{{mission.id}}/{{mission.averagePayment}}" class="btn btn-primary">Money To Pay</a>-->
+      </div>
+    </div>
+    <br> <br>
+  </div>
+  <!--<div class="post-title">
+    <a href="#">New data recording system to better analyse road accidents</a>
+  </div>-->
+  <!--<div clvass="post-image">
+    <div>
+      <img src="./assets/popular-post/m-blog-1.jpg" class="img" alt="blog1">
+    </div>
+    <div class="post-info flex-row">
+                          <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                              2019</span>
+      <span>2 Commets</span>
+    </div>
+  </div>
+  <div class="post-title">
+    <a href="#">New data recording system to better analyse road accidents</a>
+  </div>-->
+
+  <!-- <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+     <div class="post-image">
+       <div>
+         <img src="./assets/popular-post/m-blog-2.jpg" class="img" alt="blog1">
+       </div>
+       <div class="post-info flex-row">
+                             <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                 2019</span>
+         <span>2 Commets</span>
+       </div>
+     </div>
+     <div class="post-title">
+       <a href="#">New data recording system to better analyse road accidents</a>
+     </div>
+   </div>-->
+  <!--  <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+      <div class="post-image">
+        <div>
+          <img src="./assets/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+        </div>
+        <div class="post-info flex-row">
+                              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                  2019</span>
+          <span>2 Commets</span>
+        </div>
+      </div>
+      <div class="post-title">
+        <a href="#">New data recording system to better analyse road accidents</a>
+      </div>
+    </div>-->
+  <!--   <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+       <div class="post-image">
+         <div>
+           <img src="./assets/popular-post/m-blog-4.jpg" class="img" alt="blog1">
+         </div>
+         <div class="post-info flex-row">
+                               <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                   2019</span>
+           <span>2 Commets</span>
+         </div>
+       </div>
+       <div class="post-title">
+         <a href="#">New data recording system to better analyse road accidents</a>
+       </div>
+     </div>-->
+  <!--  <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+      <div class="post-image">
+        <div>
+          <img src="./assets/popular-post/m-blog-5.jpg" class="img" alt="blog1">
+        </div>
+        <div class="post-info flex-row">
+                              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                  2019</span>
+          <span>2 Commets</span>
+        </div>
+      </div>
+      <div class="post-title">
+        <a href="#">New data recording system to better analyse road accidents</a>
+      </div>
+    </div>-->
+</div>

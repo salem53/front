@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MissionService {
-  urlMissions='http://127.0.0.1:8070/Mission'
+  urlMissions='http://127.0.0.1:8070/Mission';
   constructor(private Http: HttpClient) { }
   createMission(mission) // add a mission related to a client
   {
@@ -19,9 +19,16 @@ export class MissionService {
   getHiredMissions(){
     return this.Http.get(this.urlMissions +'/getHiredMissions');
   }
+  getFreelancersBySkills(skills){
+    return this.Http.get(this.urlMissions+'/getMissionsBySkills/missions/freelancers/geta/'+skills);
+  }
+  getMissionsBySKills(skills){
+    return this.Http.get(this.urlMissions+'/getNotHiredMissionsBySkills/missions/notHired/'+skills);
+  }
   getHiredMissionsForClient(clientId){
     return this.Http.get(this.urlMissions +'/getHiredMissions/clients/'+clientId);
   }
+
   getCompletedMissionsForClient(clientId){
     return this.Http.get(this.urlMissions +'/getCompletedMissions/clients/'+clientId);
   }

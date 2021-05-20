@@ -56,6 +56,11 @@ import { SearchMissionComponent } from './search-mission/search-mission.componen
 import { SearchFreelancerComponent } from './search-freelancer/search-freelancer.component';
 import { ListCompletedClientMissionsComponent } from './list-completed-client-missions/list-completed-client-missions.component';
 import { ListCompletedFreelancerMissionsComponent } from './list-completed-freelancer-missions/list-completed-freelancer-missions.component';
+import { FoundedFreelancersComponent } from './founded-freelancers/founded-freelancers.component';
+import { FoundedClientsComponent } from './founded-clients/founded-clients.component';
+import { FoundedMissionsComponent } from './founded-missions/founded-missions.component';
+import { HiredMissionsFreelancerComponent } from './hired-missions-freelancer/hired-missions-freelancer.component';
+import { HiredMissionsClientComponent } from './hired-missions-client/hired-missions-client.component';
 
 
 
@@ -110,7 +115,12 @@ import { ListCompletedFreelancerMissionsComponent } from './list-completed-freel
     SearchMissionComponent,
     SearchFreelancerComponent,
     ListCompletedClientMissionsComponent,
-    ListCompletedFreelancerMissionsComponent
+    ListCompletedFreelancerMissionsComponent,
+    FoundedFreelancersComponent,
+    FoundedClientsComponent,
+    FoundedMissionsComponent,
+    HiredMissionsFreelancerComponent,
+    HiredMissionsClientComponent
 
   ],
   imports: [

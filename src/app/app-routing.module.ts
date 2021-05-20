@@ -45,6 +45,10 @@ import {BrowseProjectsComponent} from './browse-projects/browse-projects.compone
 import {SearchBarComponent} from './search-bar/search-bar.component';
 import {ListCompletedFreelancerMissionsComponent} from './list-completed-freelancer-missions/list-completed-freelancer-missions.component';
 import {ListCompletedClientMissionsComponent} from './list-completed-client-missions/list-completed-client-missions.component';
+import {FoundedFreelancersComponent} from './founded-freelancers/founded-freelancers.component';
+import {FoundedMissionsComponent} from './founded-missions/founded-missions.component';
+import {HiredMissionsFreelancerComponent} from './hired-missions-freelancer/hired-missions-freelancer.component';
+import {HiredMissionsClientComponent} from './hired-missions-client/hired-missions-client.component';
 
 
 const routes: Routes = [
@@ -55,6 +59,8 @@ const routes: Routes = [
   { path: 'pdfTest', component: PdfTestComponent },
   { path: 'paypal/:id/:money', component: PaypalTestComponent },
   { path: 'search', component: SearchBarComponent },
+  { path: 'founded-freelancer/:skills', component: FoundedFreelancersComponent},
+  { path: 'founded-mission/:skills', component: FoundedMissionsComponent},
 
   { path: 'test', component: TestFlaskComponent },
   { path: 'about', component: AboutComponent },
@@ -68,11 +74,13 @@ const routes: Routes = [
   { path: 'newsfeed-freelancer', component: FreelancerNewsfeedComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'browse-project', component: BrowseProjectsComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'list-completed-freelancer-mission', component: ListCompletedFreelancerMissionsComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'hired-missions-freelancer', component: HiredMissionsFreelancerComponent, canActivate: [FreelancerAuthGuardService] },
 
   { path: 'freelancers', component: ListFreelancersComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-client', component: SigninClientComponent },
   { path: 'signup-client', component: SignupClientComponent },
   { path: 'signout-client', component: SignoutClientComponent, canActivate: [ClientAuthguardService] },
+  { path: 'hired-missions-client', component: HiredMissionsClientComponent, canActivate: [ClientAuthguardService] },
   { path: 'newsfeed-client', component: ClientNewsfeedComponent , canActivate: [ClientAuthguardService]},
   { path: 'post-project', component: PostProjectsComponent , canActivate: [ClientAuthguardService]},
   { path: 'list-completed-client-mission', component: ListCompletedClientMissionsComponent , canActivate: [ClientAuthguardService]},
