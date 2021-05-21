@@ -47,6 +47,13 @@ export class MissionService {
   updateMission(mission) {
     return this.Http.put(this.urlMissions  + '/updateMission',mission);
   }
+  
+  addInvitedFreelancer(idMission,idFreelancer) {
+    return this.Http.put(this.urlMissions  + '/updateListInvitedMission/'+idMission+'/'+idFreelancer,{ observe: 'response' });
+  }
+  addAppliedFreelancer(idMission,idFreelancer) {
+    return this.Http.put(this.urlMissions  + '/updateListAppliedMission/'+idMission+'/'+idFreelancer,{});
+  }
   updateFileMission(idMission, uploadImageData,message) {
    // return this.Http.put(this.urlMissions  + '/updateMission',mission);
      //Make a call to the Spring Boot Application to save the image

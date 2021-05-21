@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class AddMissionComponent implements OnInit {
 
   idMission:number=0;
-  constructor(private router : Router, private route: ActivatedRoute,private service: MissionService) { }
+  constructor(private router : Router, private route: ActivatedRoute,private service: MissionService) {this.service.getMissionById(1).subscribe(res=>{console.log(res)}) }
   freelancer:any={};
   mission:any={};
   personnes: any;
@@ -42,8 +42,8 @@ client:any={};
     'technologies':form.value.technologies,
     'contrat':""
     }
-    this.service.createMission(this.mission).subscribe(result=>{this.personnes=result;this.idMission=result["id"]; console.log(result["id"]);this.onUpload(result["id"]);
-    this.router.navigate(['post-project']);
+    this.service.createMission(this.mission).subscribe(result=>{this.personnes=result;this.idMission=result["id"]; this.router.navigate(['invite-freelancer/'+result["id"]]); console.log(result["id"]);this.onUpload(result["id"]);
+   
     });
 
   }
@@ -63,6 +63,7 @@ client:any={};
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
     this.service.updateFileMission(idMission, uploadImageData,this.message)
+
 
   }
 

@@ -61,6 +61,7 @@ import { FoundedClientsComponent } from './founded-clients/founded-clients.compo
 import { FoundedMissionsComponent } from './founded-missions/founded-missions.component';
 import { HiredMissionsFreelancerComponent } from './hired-missions-freelancer/hired-missions-freelancer.component';
 import { HiredMissionsClientComponent } from './hired-missions-client/hired-missions-client.component';
+import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
 
 
 
@@ -120,7 +121,8 @@ import { HiredMissionsClientComponent } from './hired-missions-client/hired-miss
     FoundedClientsComponent,
     FoundedMissionsComponent,
     HiredMissionsFreelancerComponent,
-    HiredMissionsClientComponent
+    HiredMissionsClientComponent,
+    InviteFreelancerComponent
 
   ],
   imports: [
