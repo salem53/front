@@ -62,6 +62,11 @@ import { FoundedMissionsComponent } from './founded-missions/founded-missions.co
 import { HiredMissionsFreelancerComponent } from './hired-missions-freelancer/hired-missions-freelancer.component';
 import { HiredMissionsClientComponent } from './hired-missions-client/hired-missions-client.component';
 import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
+import { ListFeedbacksFreelancerComponent } from './list-feedbacks-freelancer/list-feedbacks-freelancer.component';
+import { FreelancerFeedbackComponent } from './freelancer-feedback/freelancer-feedback.component';
+import { ListInvitationsFreelancerComponent } from './list-invitations-freelancer/list-invitations-freelancer.component';
+import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
+
 
 
 
@@ -122,7 +127,12 @@ import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer
     FoundedMissionsComponent,
     HiredMissionsFreelancerComponent,
     HiredMissionsClientComponent,
-    InviteFreelancerComponent
+    InviteFreelancerComponent,
+    ListFeedbacksFreelancerComponent,
+    FreelancerFeedbackComponent,
+    ListInvitationsFreelancerComponent,
+    ListAppliedMissionsFreelancerComponent
+   
 
   ],
   imports: [

@@ -1,3 +1,7 @@
+import { ListInvitationsFreelancerComponent } from './list-invitations-freelancer/list-invitations-freelancer.component';
+import { FreelancerFeedbackComponent } from './freelancer-feedback/freelancer-feedback.component';
+
+import { ListFeedbacksFreelancerComponent } from './list-feedbacks-freelancer/list-feedbacks-freelancer.component';
 import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
 import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
 import { NgModule } from '@angular/core';
@@ -50,6 +54,7 @@ import {FoundedFreelancersComponent} from './founded-freelancers/founded-freelan
 import {FoundedMissionsComponent} from './founded-missions/founded-missions.component';
 import {HiredMissionsFreelancerComponent} from './hired-missions-freelancer/hired-missions-freelancer.component';
 import {HiredMissionsClientComponent} from './hired-missions-client/hired-missions-client.component';
+import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
 
 
 const routes: Routes = [
@@ -104,7 +109,12 @@ const routes: Routes = [
   { path: 'update-freelancer-profile', component: UpdateFreelancerDataProfileComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'update-client-profile', component: UpdateClientDataProfileComponent, canActivate: [ClientAuthguardService] },
   {path: 'dashboard-client/:idClient', component: DashboardClientComponent},
-  {path: 'invite-freelancer/:idMission',component: InviteFreelancerComponent}
+  {path: 'invite-freelancer/:idMission',component: InviteFreelancerComponent},
+  {path: 'listFeedbacks-freelancer/:idFreelancer',component: ListFeedbacksFreelancerComponent},
+  {path: 'feedbackFreelancer/:idClient/:idMission',component: FreelancerFeedbackComponent},
+  {path: 'invitationsForMissions',component: ListInvitationsFreelancerComponent},
+  {path: 'listMissionsAppliedFor',component: ListAppliedMissionsFreelancerComponent}
+ 
 ];
 
 @NgModule({

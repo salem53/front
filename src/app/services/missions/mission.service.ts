@@ -82,5 +82,20 @@ export class MissionService {
   }
   */
 
+    getListInvitationToFreelancer(idFreelancer)
+    {
+      
+      return this.Http.get(this.urlMissions +'/getInvitationListToFreelancer/'+idFreelancer);
+    }
+
+    acceptInvitationFreelancer(idMission,idFreelancer) {
+      return this.Http.put(this.urlMissions  + '/updateListAcceptedInvitations/'+idMission+'/'+idFreelancer,{ observe: 'response' });
+    }
+
+    getListAppliedForMissionToFreelancer(idFreelancer)//the list of missions that this freelancer has applied for
+    {
+      
+      return this.Http.get(this.urlMissions +'/getAppliedMissionsToFreelancer/'+idFreelancer);
+    }
 }
 

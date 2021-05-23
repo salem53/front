@@ -1,0 +1,55 @@
+<header id="head" class="secondary"></header>
+<!-- container -->
+<div class="container">
+    <div class="row">
+        <h2>Feedback</h2>
+        <p class="lead">
+           
+            <small class="text-muted">Give us your impression about working with this client</small>
+        </p>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-8">
+
+                
+                <form role="form" #myForm=ngForm (ngSubmit)= newFreelancerReview(myForm)>
+                    <!--ce message n'est afficher que si lorsque invalid=true-->
+                  
+                    <div class="form-group float-label-control">
+                       
+                        <input type="text" class="form-control" placeholder="insert your feedback"  name="feed" #feed="ngModel" required  [(ngModel)]="feedback.feed" >
+                    </div>
+                   
+                               
+                     
+                    <button class="btn btn-action" type="submit" > Submit </button>
+                                                                               
+                </form>
+
+                   
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Features
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Very customizable</li>
+                            <li>Works with Bootstrap's native form examples</li>
+                            <li>Uses CSS transitions for fallback browser support</li>
+                            <li>Placeholder override for labels when fields are empty</li>
+                            <li>Included authored jQuery plugin</li>
+                            <li>Optional bottom label positioning with the <code>.label-bottom</code> utility</li>
+                            <li>Works great with Chrome's AutoComplete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

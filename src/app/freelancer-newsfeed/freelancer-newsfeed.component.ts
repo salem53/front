@@ -1,3 +1,4 @@
+import { FeedbacksFreelancerService } from './../services/reviews/feedbacks-freelancer.service';
 import { CertificationService } from './../services/InfosFreelancer/certification.service';
 import { ServiceExperienceService } from './../services/InfosFreelancer/service-experience.service';
 
@@ -20,7 +21,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
 
   // pdf contenent
 
-  constructor(private httpClient: HttpClient, private studyService: StudyService,private experienceService: ServiceExperienceService,private certificationService: CertificationService,private skillService:SkillService ) {
+  constructor(private httpClient: HttpClient, private studyService: StudyService,private experienceService: ServiceExperienceService,private certificationService: CertificationService,private skillService:SkillService, private feedbackService:FeedbacksFreelancerService ) {
     //this.getInformations();
     this.getImage();
     this.idFreelancer=sessionStorage.getItem("id");
@@ -28,14 +29,16 @@ export class FreelancerNewsfeedComponent implements OnInit {
   this.experienceService.getListOfExperiences(this.idFreelancer).subscribe(response=>{this.listExperiences=response;});
   this.certificationService.getListOfCertification(this.idFreelancer).subscribe(response=>{this.listCertifications=response;});
   this.skillService.getAllSkill(this.idFreelancer).subscribe(response=>{this.listSkills=response;});
-  console.log(this.listSkills);
+
+  this.feedbackService.getFreelancerFeedback(parseInt(this.idFreelancer)).subscribe(response=>{console.log("freelancer feed done");this.listFeedbacks=response;console.log(this.listFeedbacks);});
+      
   }
   listStudies:any;
   listExperiences:any;
   listCertifications:any;
-  idFreelancer : String;
+  idFreelancer : string;
   listSkills:any;
-
+  listFeedbacks:any;
   // image details
   selectedFile: File;
 
@@ -269,7 +272,11 @@ export class FreelancerNewsfeedComponent implements OnInit {
     pdfMake.createPdf(this.docDefinition).download();
   }
 
-
+  getFeedbacksAboutFreelancer()
+  {
+   
+  }
+  
 
   
   /*getInformations()

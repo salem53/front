@@ -11,7 +11,10 @@ import { HttpClient } from '@angular/common/http';
 export class AddMissionComponent implements OnInit {
 
   idMission:number=0;
-  constructor(private router : Router, private route: ActivatedRoute,private service: MissionService) {this.service.getMissionById(1).subscribe(res=>{console.log(res)}) }
+  constructor(private router : Router, private route: ActivatedRoute,private service: MissionService) {
+    this.service.getMissionById(1).subscribe(res=>{console.log(res)}) 
+   
+  }
   freelancer:any={};
   mission:any={};
   personnes: any;
@@ -67,6 +70,7 @@ client:any={};
 
   }
 
+ 
 
 
 

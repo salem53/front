@@ -61,7 +61,7 @@ export class AddSkillComponent implements OnInit {
 
 
       });
-    //  this.router.navigate(['freelancer-newsfeed']) ajouter une redirection vers le profil du freelancer
+     this.router.navigate(['newsfeed-freelancer']) 
   }
 
 
