@@ -2,7 +2,7 @@
 
 <ol class="breadcrumb" routerLinkActive="active">
   <li><a routerLink="/home">Home</a></li>
-  <li class="active">List Of Completed Missions</li>
+  <li class="active">List Of invitations for Missions</li>
 </ol>
 <table class="table table-striped">
   <thead>
@@ -11,17 +11,17 @@
     <th>Client Name</th>
     <th>Client Email</th>
     <th>Mission Price</th>
-    <th>Give Feedback to Client (You can Do it just once)</th>
+    <th>Accept Invitation for a mission(You can Do it just once)</th>
   </tr>
 
   </thead>
   <tbody>
-  <tr *ngFor="let mission of completedMissions">
+  <tr *ngFor="let mission of listInvitations">
     <td>{{mission.title}}</td>
     <td>{{mission.client.firstName}} {{mission.client.lastName}}</td>
     <td>{{mission.client.email}}</td>
     <td>{{mission.averagePayment}}$</td>
-    <td><button (click)="giveFeedback(mission.client.id)" class="btn btn-warning">Give Feedback</button></td>
+    <td><button (click)=" acceptInvitation(mission.id)" class="btn btn-warning">Accept</button></td> <!--(click)=" acceptInvitation(mission.id)"-->
   </tr>
   </tbody>
 

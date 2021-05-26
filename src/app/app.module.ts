@@ -65,6 +65,12 @@ import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer
 import { ManageApplicationFreelancerComponent } from './manage-application-freelancer/manage-application-freelancer.component';
 import { ManageApplicationClientComponent } from './manage-application-client/manage-application-client.component';
 import { NotHiredMissionDetailsComponent } from './not-hired-mission-details/not-hired-mission-details.component';
+import { ListFeedbacksFreelancerComponent } from './list-feedbacks-freelancer/list-feedbacks-freelancer.component';
+import { FreelancerFeedbackComponent } from './freelancer-feedback/freelancer-feedback.component';
+import { ListInvitationsFreelancerComponent } from './list-invitations-freelancer/list-invitations-freelancer.component';
+import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
+import { SkillsQuestionsComponent } from './skills-questions/skills-questions.component';
+
 
 
 
@@ -128,7 +134,13 @@ import { NotHiredMissionDetailsComponent } from './not-hired-mission-details/not
     InviteFreelancerComponent,
     ManageApplicationFreelancerComponent,
     ManageApplicationClientComponent,
-    NotHiredMissionDetailsComponent
+    NotHiredMissionDetailsComponent,
+    ListFeedbacksFreelancerComponent,
+    FreelancerFeedbackComponent,
+    ListInvitationsFreelancerComponent,
+    ListAppliedMissionsFreelancerComponent,
+    SkillsQuestionsComponent
+   
 
   ],
   imports: [

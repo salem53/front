@@ -26,4 +26,8 @@ export class FlaskServiceService {
   {
       return this.Http.get<any>(this.urlFlask+'/updateInvitedList/'+idMission+'/'+idFreelancer);
   }
+  updateFreelancerRating(idFreelancer)
+  {
+      return this.Http.get<any[]>(this.urlFlask+'/upadateFreelancerRating/'+idFreelancer);
+  }
 }

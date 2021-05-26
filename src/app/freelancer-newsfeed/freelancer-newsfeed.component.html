@@ -42,7 +42,11 @@
           </div>
         </div>
         <div class="card mt-3">
+<<<<<<< HEAD
           <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education :</h3>
+=======
+          <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education </h3>   
+>>>>>>> Nermine
           <ul class="list-group list-group-flush" *ngFor="let study of listStudies">
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
               <h6 class="mb-0">{{study.education.degree}} at: {{study.education.school}} </h6>
@@ -55,7 +59,7 @@
         </div>
 
         <div class="card mt-3">
-          <h3><span class="text-secondary"><a href="http://localhost:4200/newExperience/{{idFreelancer}}">+</a></span> Experience :</h3>
+          <h3><span class="text-secondary"><a href="http://localhost:4200/newExperience/{{idFreelancer}}">+</a></span> Experience </h3>
               <ul class="list-group list-group-flush" *ngFor="let experience of listExperiences">
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
               <h6 class="mb-0" > {{experience.experience.positionTitle}} at: {{experience.experience.company}} </h6>
@@ -73,6 +77,7 @@
       <div class="col-md-5">
         <div class="card mb-3">
           <div class="card-body">
+            <!--
             <div class="row">
               <div class="col-sm-4">
                 <h6 class="mb-0 gauche">Full Name</h6>
@@ -82,24 +87,27 @@
               </div>
             </div>
             <hr>
+          -->
             <div class="row">
               <div class="col-sm-4">
-                <h6 class="mb-0 gauche" >Email</h6>
+                <h6 class="mb-0 gauche" >Job</h6>
+              </div>
+              <div class="col-sm-8 droite">
+                {{job}}
+              </div>
+            </div>
+            <hr>
+              
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0 gauche">Email</h6>
               </div>
               <div class="col-sm-8 droite">
                 {{email}}
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-sm-4">
-                <h6 class="mb-0 gauche">Nationality</h6>
-              </div>
-              <div class="col-sm-8 droite">
-                {{nationality}}
-              </div>
-            </div>
-            <hr>
+         
             <div class="row">
               <div class="col-sm-4">
                 <h6 class="mb-0 gauche">Mobile</h6>
@@ -200,6 +208,20 @@
            </div>
           </div>-->
                                </div>
+
+                               
+        <div class="card mt-3">
+          <h3><span class="text-secondary"></span>Clients's Reviews </h3>
+              <ul class="list-group list-group-flush" *ngFor="let review of listFeedbacks">
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <h6 class="mb-0" > <strong style="color: coral;font-size: medium;">{{review.client.firstName}} {{review.client.lastName}}</strong> says: </h6>
+           
+              <ul><li>{{review.commentClient}}</li></ul>
+            </li> 
+          </ul>
+        </div>
+
+
       </div>
       <div class="col-md-3">
         <div class="card mb-3">
@@ -208,7 +230,7 @@
 
               <div class="col-sm-6">
 
-                <h6 class="mb-0 gauche" >Inscription :  </h6>
+                <h6 class="mb-0 gauche" >Inscription Date:  </h6>
               </div>
               <div class="col-sm-6 gauche">
                 {{inscription_date}}
@@ -242,7 +264,7 @@
           </div>
 
           <div class="card mt-3">
-            <h3><span class="text-secondary"><a href="http://localhost:4200/newCertification/{{idFreelancer}}">+</a></span> Certification :</h3>
+            <h3><span class="text-secondary"><a href="http://localhost:4200/newCertification/{{idFreelancer}}">+</a></span> Certification </h3>
                 <ul class="list-group list-group-flush" *ngFor="let certif of listCertifications">
               <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                 <h6 class="mb-0">{{certif.certification.name}} from: {{certif.certification.organism}} </h6>

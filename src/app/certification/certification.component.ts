@@ -75,7 +75,7 @@ export class CertificationComponent implements OnInit {
        
         }
         );
- 
+        this.router.navigate(['newsfeed-freelancer']) 
         }
 
 

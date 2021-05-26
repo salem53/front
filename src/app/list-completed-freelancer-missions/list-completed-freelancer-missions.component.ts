@@ -16,10 +16,14 @@ export class ListCompletedFreelancerMissionsComponent implements OnInit {
     this.missionService.getCompletedMissionsForFreelancer(sessionStorage.getItem('id')).
     subscribe(data =>{
       this.completedMissions = data;
+      this.idMission=data[0]['id'];
+      console.log(data[0]['id'])
     })
   }
-
-  giveFeedback() {
-
+idMission:number;
+ 
+  giveFeedback(idClient) {
+   this.router.navigate(['feedbackFreelancer/'+idClient+'/'+this.idMission]);
+ // console.log(idClient)
   }
 }
