@@ -1,0 +1,90 @@
+<header id="head" class="secondary"></header>
+<br><br>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4" >
+    <div class="card" >
+      <div class="card-header">
+        <h1><em>Mission Title : </em></h1>  {{mission.title}}
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><h2><em>Mission Description : </em></h2> {{mission.description}}</li>
+        <li class="list-group-item"><h2><em>Mission Technologies : </em></h2> {{mission.technologies}}</li>
+        <li class="list-group-item"><h2><em>Price : </em></h2> {{mission.averagePayment}}$</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-sm-6 ">
+    <div class="card" >
+      <div class="card-header">
+        <h1><em><h1>Freelancers that apply for this mission</h1> </em></h1>
+      </div>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Freelancer Name</th>
+        <th>Freelancer Job</th>
+        <th>Freelancer Description</th>
+
+        <th>Freelancer Email</th>
+        <th>Freelancer Telephone Number</th>
+        <th>Click to Hire Freelancer</th>
+      </tr>
+
+      </thead>
+      <tbody>
+      <tr *ngFor="let freelancer of appliedFreelancers">
+        <td>{{freelancer.firstName}} {{freelancer.lastName}}</td>
+        <td>{{freelancer.job}}</td>
+        <td>{{freelancer.description}}</td>
+        <td>{{freelancer.email}}</td>
+        <td>{{freelancer.telephoneNumber}}</td>
+
+        <td><button (click)="hireFreelancer(freelancer.id)" class="btn btn-warning">Hire Freelancer</button></td>
+      </tr>
+      </tbody>
+
+
+    </table>
+    </div>
+  </div>
+  <div class="col-sm-6 ">
+    <div class="card" >
+      <div class="card-header">
+        <h1><em><h1>Freelancers that accept Invitation For this Mission</h1> </em></h1>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Freelancer Name</th>
+          <th>Freelancer Job</th>
+          <th>Freelancer Description</th>
+
+          <th>Freelancer Email</th>
+          <th>Freelancer Telephone Number</th>
+          <th>Click to Hire Freelancer</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr *ngFor="let freelancer of freelancersAcceptedInvitations">
+          <td>{{freelancer.firstName}} {{freelancer.lastName}}</td>
+          <td>{{freelancer.job}}</td>
+          <td>{{freelancer.description}}</td>
+          <td>{{freelancer.email}}</td>
+          <td>{{freelancer.telephoneNumber}}</td>
+
+          <td><button (click)="hireFreelancer(freelancer.id)" class="btn btn-warning">Hire Freelancer</button></td>
+        </tr>
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+</div>
+

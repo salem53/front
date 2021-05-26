@@ -1,0 +1,32 @@
+<header id="head" class="secondary"></header>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id Mission</th>
+    <th>Mission Tittle</th>
+    <th>Mission Description</th>
+    <th>Mission Technologies</th>
+    <th>Mission Price</th>
+
+    <th>Manage Applications</th>
+
+  </tr>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let m of missions">
+    <td>{{m.mission.id}}</td>
+    <td>{{m.mission.title}}</td>
+    <td>{{m.mission.description}}</td>
+    <td>{{m.mission.technologies}}</td>
+    <td>{{m.mission.averagePayment}}$</td>
+
+    <td><button (click)="getDetails(m)" class="btn btn-warning">Manage Applications</button></td>
+
+
+  </tr>
+  </tbody>
+
+
+</table>
