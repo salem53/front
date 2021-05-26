@@ -35,11 +35,17 @@ export class MissionService {
   getHiredMissionsForFreelancer(freelancerId){
     return this.Http.get(this.urlMissions +'/getHiredMissions/freelancers/'+freelancerId);
   }
+  getNotHiredMissionsForClient(id){
+    return this.Http.get(this.urlMissions+'/getNotHiredMissions/clients/'+id);
+  }
   getCompletedMissionsForFreelancer(freelancerId){
     return this.Http.get(this.urlMissions +'/getCompletedMissions/freelancers/'+freelancerId);
   }
   setMissionAsCompleted(missionId){
     return this.Http.get(this.urlMissions +'/setMissionAsCompleted/mission/'+missionId);
+  }
+  setMissionAsHired(missionId,freelancerID){
+    return this.Http.get(this.urlMissions +'/setMissionAsHired/'+missionId+'/'+freelancerID);
   }
   deleteMission(id) {
     return this.Http.delete(this.urlMissions +'/deleteMission/'+id);

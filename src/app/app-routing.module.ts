@@ -49,6 +49,8 @@ import {FoundedFreelancersComponent} from './founded-freelancers/founded-freelan
 import {FoundedMissionsComponent} from './founded-missions/founded-missions.component';
 import {HiredMissionsFreelancerComponent} from './hired-missions-freelancer/hired-missions-freelancer.component';
 import {HiredMissionsClientComponent} from './hired-missions-client/hired-missions-client.component';
+import {ManageApplicationClientComponent} from './manage-application-client/manage-application-client.component';
+import {NotHiredMissionDetailsComponent} from './not-hired-mission-details/not-hired-mission-details.component';
 
 
 const routes: Routes = [
@@ -73,6 +75,7 @@ const routes: Routes = [
   { path: 'signout-freelancer', component: SignoutFreelancerComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'newsfeed-freelancer', component: FreelancerNewsfeedComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'browse-project', component: BrowseProjectsComponent, canActivate: [FreelancerAuthGuardService] },
+  { path: 'manage-applications-freelancer', component: BrowseProjectsComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'list-completed-freelancer-mission', component: ListCompletedFreelancerMissionsComponent, canActivate: [FreelancerAuthGuardService] },
   { path: 'hired-missions-freelancer', component: HiredMissionsFreelancerComponent, canActivate: [FreelancerAuthGuardService] },
 
@@ -81,8 +84,10 @@ const routes: Routes = [
   { path: 'signup-client', component: SignupClientComponent },
   { path: 'signout-client', component: SignoutClientComponent, canActivate: [ClientAuthguardService] },
   { path: 'hired-missions-client', component: HiredMissionsClientComponent, canActivate: [ClientAuthguardService] },
+  { path: 'not-hired-mission-details', component: NotHiredMissionDetailsComponent, canActivate: [ClientAuthguardService] },
   { path: 'newsfeed-client', component: ClientNewsfeedComponent , canActivate: [ClientAuthguardService]},
   { path: 'post-project', component: PostProjectsComponent , canActivate: [ClientAuthguardService]},
+  { path: 'manage-applications-client', component: ManageApplicationClientComponent , canActivate: [ClientAuthguardService]},
   { path: 'list-completed-client-mission', component: ListCompletedClientMissionsComponent , canActivate: [ClientAuthguardService]},
   { path: 'clients', component: ListClientsComponent, canActivate: [AdminAuthguardService] },
   { path: 'signin-admin', component: SigninAdminComponent },

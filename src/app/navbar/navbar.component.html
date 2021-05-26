@@ -23,11 +23,27 @@
         <li><a routerLink="/about">about</a></li>
         <li><a routerLink="/contact">Contact</a></li>
         <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/browse-project">Browse Project</a></li>
-        <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/list-completed-freelancer-mission">Completed Projects</a></li>
-        <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/hired-missions-freelancer">Hired Projects</a></li>
         <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/post-project">Post Project</a></li>
-        <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/list-completed-client-mission">Completed Projects</a></li>
-        <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/hired-missions-client">Hired Projects</a></li>
+        <li *ngIf="loginService.isUserLoggedIn()" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/manage-applications-freelancer">Not Hired Projects</a></li>
+            <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/hired-missions-freelancer">Hired Projects</a></li>
+            <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/list-completed-freelancer-mission">Completed Projects</a></li>
+          </ul>
+        </li>
+        <li *ngIf="loginServiceClient.isUserLoggedIn()" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+
+            <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/manage-applications-client">Not Hired Projects</a></li>
+            <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/hired-missions-client">Hired Projects</a></li>
+            <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/list-completed-client-mission">Completed Projects</a></li>
+          </ul>
+        </li>
+
+
+
 
         <li *ngIf="loginService.isUserLoggedIn()"><a routerLink="/newsfeed-freelancer"><i class="fa fa-user"></i> Profile</a></li>
         <li *ngIf="loginServiceClient.isUserLoggedIn()"><a routerLink="/newsfeed-client"><i class="fa fa-user"></i> Profile</a></li>

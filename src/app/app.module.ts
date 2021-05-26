@@ -61,6 +61,9 @@ import { FoundedClientsComponent } from './founded-clients/founded-clients.compo
 import { FoundedMissionsComponent } from './founded-missions/founded-missions.component';
 import { HiredMissionsFreelancerComponent } from './hired-missions-freelancer/hired-missions-freelancer.component';
 import { HiredMissionsClientComponent } from './hired-missions-client/hired-missions-client.component';
+import { ManageApplicationFreelancerComponent } from './manage-application-freelancer/manage-application-freelancer.component';
+import { ManageApplicationClientComponent } from './manage-application-client/manage-application-client.component';
+import { NotHiredMissionDetailsComponent } from './not-hired-mission-details/not-hired-mission-details.component';
 
 
 
@@ -120,7 +123,10 @@ import { HiredMissionsClientComponent } from './hired-missions-client/hired-miss
     FoundedClientsComponent,
     FoundedMissionsComponent,
     HiredMissionsFreelancerComponent,
-    HiredMissionsClientComponent
+    HiredMissionsClientComponent,
+    ManageApplicationFreelancerComponent,
+    ManageApplicationClientComponent,
+    NotHiredMissionDetailsComponent
 
   ],
   imports: [
