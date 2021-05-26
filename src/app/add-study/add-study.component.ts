@@ -84,7 +84,7 @@ export class AddStudyComponent implements OnInit {
 
 
       });
-      this.router.navigate(['newsfeed-freelancer']) 
+      this.router.navigate(['newsfeed-freelancer']) ;
   }
 
   RefreshPageInCaseOfError(n)

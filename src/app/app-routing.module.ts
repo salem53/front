@@ -55,12 +55,9 @@ import {FoundedFreelancersComponent} from './founded-freelancers/founded-freelan
 import {FoundedMissionsComponent} from './founded-missions/founded-missions.component';
 import {HiredMissionsFreelancerComponent} from './hired-missions-freelancer/hired-missions-freelancer.component';
 import {HiredMissionsClientComponent} from './hired-missions-client/hired-missions-client.component';
-<<<<<<< HEAD
 import {ManageApplicationClientComponent} from './manage-application-client/manage-application-client.component';
 import {NotHiredMissionDetailsComponent} from './not-hired-mission-details/not-hired-mission-details.component';
-=======
 import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
->>>>>>> Nermine
 
 
 const routes: Routes = [
