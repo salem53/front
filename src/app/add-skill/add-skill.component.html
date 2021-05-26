@@ -18,42 +18,21 @@
         <div class="row">
             <div class="col-sm-8">
 
-                <h4 class="page-header">Default Implementation</h4>
+                <!--<h4 class="page-header">Default Implementation</h4>-->
                 <form role="form" #myForm=ngForm (ngSubmit)=newSkill(myForm)>
-                   <!-- <div class="form-group float-label-control"        newSkill(myForm)>
-                        <label for="">id</label>
-                        <input type="text" class="form-control" placeholder="Username" name="id"  >
-                    </div>
-                    -->
+               
                     <div class="form-group float-label-control">
-                        <label for="">Skill:</label>
+                      <!--  <label for="">Skill:</label>-->
                         <input type="text" class="form-control" placeholder="skill" #name="ngModel" name="name" [(ngModel)]="skill.name" required>
                     </div>
-                    <div [hidden]="name.valid || name.pristine"> Please insert the skill in order to add it to your profil</div>
+                    <div [hidden]="name.valid || name.pristine" style="color: blue;"> Please insert the skill in order to add it to your profil</div>
                  
   
                     <button class="btn btn-action" type="submit" [disabled]=!myForm.valid > Submit </button>
 
                 </form>
 
-<!--
-                <h4 class="page-header">Bottom Labels</h4>
-                <form role="form">
-                    <div class="form-group float-label-control label-bottom">
-                        <label for="">Username</label>
-                        <input type="email" class="form-control" placeholder="Username">
-                    </div>
-                </form>
-
-
-                <h4 class="page-header">Placeholder Overrides</h4>
-                <form role="form">
-                    <div class="form-group float-label-control">
-                        <label for="">Email Address</label>
-                        <input type="email" class="form-control" placeholder="What's your email address?">
-                    </div>
-                </form>
--->         
+         
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-default">

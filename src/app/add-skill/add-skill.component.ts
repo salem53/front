@@ -16,7 +16,7 @@ export class AddSkillComponent implements OnInit {
   skill:any={};
   constructor( private router : Router, private route: ActivatedRoute,private skillService :SkillService) 
   { 
-    this.skillService.getQuestions().subscribe(res=>{console.log(res);});
+    //this.skillService.getQuestions().subscribe(res=>{console.log(res);});
   }
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class AddSkillComponent implements OnInit {
     this.skilled.idSkilled=this.idSkilled;
     this.skillService.getSkillByName(form.value.name).subscribe(
       response => {
-       // console.log(response[0]);
+        console.log(response);
         if (response[0]==null)//this skill isn't already registred
         {
           this.skillService.createNewSkill(this.skill).subscribe( responses => { 
@@ -64,7 +64,7 @@ export class AddSkillComponent implements OnInit {
 
 
       });
-     this.router.navigate(['newsfeed-freelancer']) 
+      this.router.navigate(['newsfeed-freelancer']) ; 
   }
 
 

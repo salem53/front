@@ -25,10 +25,7 @@ export class FreelancerNewsfeedComponent implements OnInit {
     //this.getInformations();
     this.getImage();
     this.idFreelancer=sessionStorage.getItem("id");
-    this.studyService.getListOfEducation(this.idFreelancer).subscribe(response=>{this.listStudies=response;});
-  this.experienceService.getListOfExperiences(this.idFreelancer).subscribe(response=>{this.listExperiences=response;});
-  this.certificationService.getListOfCertification(this.idFreelancer).subscribe(response=>{this.listCertifications=response;});
-  this.skillService.getAllSkill(this.idFreelancer).subscribe(response=>{this.listSkills=response;});
+   
 
   this.feedbackService.getFreelancerFeedback(parseInt(this.idFreelancer)).subscribe(response=>{console.log("freelancer feed done");this.listFeedbacks=response;console.log(this.listFeedbacks);});
       
@@ -251,6 +248,16 @@ export class FreelancerNewsfeedComponent implements OnInit {
           sessionStorage.setItem('telephone_number', this.telephone_number);
           sessionStorage.setItem('nationality', this.nationality);
 
+          this.studyService.getListOfEducation(this.idFreelancer).subscribe(response=>{this.listStudies=response;});
+          this.experienceService.getListOfExperiences(this.idFreelancer).subscribe(response=>{this.listExperiences=response;});
+          this.certificationService.getListOfCertification(this.idFreelancer).subscribe(response=>{this.listCertifications=response;});
+          this.skillService.getAllSkill(this.idFreelancer).subscribe(response=>{this.listSkills=response;});
+          if (!localStorage.getItem('firstReload') || localStorage.getItem('firstReload') === 'true') {
+            localStorage.setItem('firstReload', 'false');
+            window.location.reload();
+          } else {
+            localStorage.setItem('firstReload', 'true');
+          }
         }
       );
 

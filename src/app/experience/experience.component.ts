@@ -79,7 +79,7 @@ export class ExperienceComponent implements OnInit {
        
         }
         );
- 
+            this.router.navigate(['newsfeed-freelancer'])
         }
 
 
