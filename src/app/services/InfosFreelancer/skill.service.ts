@@ -50,10 +50,10 @@ getFileBack(idSkill,retrieveResonse, base64Data,retrievedImage,imageName)
   );
 }
 
-  test() 
+getQuestions() 
   {
-    console.log("hi");
-    return this.Http.get(this.urlSkilled+'/updatef');
+    //console.log("hi");
+    return this.Http.get(this.urlSkilled+'/getQuestions');
   }
 
 

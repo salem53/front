@@ -14,7 +14,10 @@ export class AddSkillComponent implements OnInit {
   skilled:Skilled={};
   idSkilled:IdSkilled={};
   skill:any={};
-  constructor( private router : Router, private route: ActivatedRoute,private skillService :SkillService) { }
+  constructor( private router : Router, private route: ActivatedRoute,private skillService :SkillService) 
+  { 
+    this.skillService.getQuestions().subscribe(res=>{console.log(res);});
+  }
 
   ngOnInit(): void {
   }
@@ -70,11 +73,7 @@ export class AddSkillComponent implements OnInit {
   base64Data: any;
   retrieveResonse: any;
   imageName: any;
-  getFile()
-  {
-    //this.skillService.getFileBack(idSkill,this.retrieveResonse, this.base64Data,this.retrievedImage,this.imageName);
-  this.skillService.test();
-  }
+ 
 
 
 

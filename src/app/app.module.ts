@@ -66,6 +66,7 @@ import { ListFeedbacksFreelancerComponent } from './list-feedbacks-freelancer/li
 import { FreelancerFeedbackComponent } from './freelancer-feedback/freelancer-feedback.component';
 import { ListInvitationsFreelancerComponent } from './list-invitations-freelancer/list-invitations-freelancer.component';
 import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
+import { SkillsQuestionsComponent } from './skills-questions/skills-questions.component';
 
 
 
@@ -131,7 +132,8 @@ import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-
     ListFeedbacksFreelancerComponent,
     FreelancerFeedbackComponent,
     ListInvitationsFreelancerComponent,
-    ListAppliedMissionsFreelancerComponent
+    ListAppliedMissionsFreelancerComponent,
+    SkillsQuestionsComponent
    
 
   ],
