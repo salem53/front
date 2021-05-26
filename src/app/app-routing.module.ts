@@ -55,12 +55,12 @@ import {FoundedFreelancersComponent} from './founded-freelancers/founded-freelan
 import {FoundedMissionsComponent} from './founded-missions/founded-missions.component';
 import {HiredMissionsFreelancerComponent} from './hired-missions-freelancer/hired-missions-freelancer.component';
 import {HiredMissionsClientComponent} from './hired-missions-client/hired-missions-client.component';
-<<<<<<< HEAD
+
 import {ManageApplicationClientComponent} from './manage-application-client/manage-application-client.component';
 import {NotHiredMissionDetailsComponent} from './not-hired-mission-details/not-hired-mission-details.component';
-=======
+
 import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
->>>>>>> Nermine
+
 
 
 const routes: Routes = [
@@ -124,7 +124,7 @@ const routes: Routes = [
   {path: 'invitationsForMissions',component: ListInvitationsFreelancerComponent},
   {path: 'listMissionsAppliedFor',component: ListAppliedMissionsFreelancerComponent},
   {path: 'validateSkills',component: SkillsQuestionsComponent}
- 
+
 ];
 
 @NgModule({

@@ -42,11 +42,10 @@
           </div>
         </div>
         <div class="card mt-3">
-<<<<<<< HEAD
+
           <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education :</h3>
-=======
-          <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education </h3>   
->>>>>>> Nermine
+
+          <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education </h3>
           <ul class="list-group list-group-flush" *ngFor="let study of listStudies">
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
               <h6 class="mb-0">{{study.education.degree}} at: {{study.education.school}} </h6>
@@ -97,7 +96,7 @@
               </div>
             </div>
             <hr>
-              
+
             <div class="row">
               <div class="col-sm-4">
                 <h6 class="mb-0 gauche">Email</h6>
@@ -107,7 +106,7 @@
               </div>
             </div>
             <hr>
-         
+
             <div class="row">
               <div class="col-sm-4">
                 <h6 class="mb-0 gauche">Mobile</h6>
@@ -209,15 +208,15 @@
           </div>-->
                                </div>
 
-                               
+
         <div class="card mt-3">
           <h3><span class="text-secondary"></span>Clients's Reviews </h3>
               <ul class="list-group list-group-flush" *ngFor="let review of listFeedbacks">
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
               <h6 class="mb-0" > <strong style="color: coral;font-size: medium;">{{review.client.firstName}} {{review.client.lastName}}</strong> says: </h6>
-           
+
               <ul><li>{{review.commentClient}}</li></ul>
-            </li> 
+            </li>
           </ul>
         </div>
 

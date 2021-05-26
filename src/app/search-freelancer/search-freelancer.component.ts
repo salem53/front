@@ -13,12 +13,9 @@ export class SearchFreelancerComponent implements OnInit {
   skills;
 
   constructor(public router : Router) {
-<<<<<<< HEAD
-    this.id = sessionStorage.getItem('id');
 
-=======
  this.id=sessionStorage.getItem('id');
->>>>>>> Nermine
+
 
   }
 
