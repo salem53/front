@@ -34,6 +34,7 @@
             </div>
           </div>
         </div>
+        <!--
         <div class="card mt-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -58,19 +59,25 @@
             </li>
           </ul>
         </div>
+
+      -->
       </div>
       <div class="col-md-5">
         <div class="card mb-3">
           <div class="card-body">
+
+            
             <div class="row">
               <div class="col-sm-4">
-                <h6 class="mb-0 gauche">Full Name</h6>
+                <h6 class="mb-0 gauche">Rating</h6>
               </div>
-              <div class="col-sm-8 droite">
-                {{firstName}} {{lastName}}
+              <div class="col-sm-8 droite" style="color:red;size: 20px;">
+                {{rating}} /10
               </div>
             </div>
             <hr>
+
+         
             <div class="row">
               <div class="col-sm-4">
                 <h6 class="mb-0 gauche" >Email</h6>
@@ -119,6 +126,7 @@
           </div>
 
         </div>
+        <!--
         <div class="row gutters-sm">
           <div class="col-sm-6 mb-3">
             <div class="card h-100">
@@ -175,6 +183,20 @@
             </div>
           </div>
         </div>
+      -->
+
+      <div class="card mt-3">
+        <h3 style="margin-left: 2%;"><span class="text-secondary"></span>Freelancer's Reviews </h3>
+            <ul class="list-group list-group-flush" *ngFor="let review of listFeedbacks">
+          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+            <h6 class="mb-0" > <strong style="color: coral;font-size: medium;">{{review.freelancer.firstName}} {{review.freelancer.lastName}}</strong> says: </h6>
+
+            <ul><li>{{review.commentFreelancer}}</li></ul>
+          </li>
+        </ul>
+      </div>
+
+
       </div>
       <div class="col-md-3">
         <div class="card mb-3">
@@ -202,9 +224,9 @@
               <h3 style="color:darkslategray">Press to build a cv :</h3>
             </div>
             <div class="row">
-              <div class="col-sm-4"><button class="btn btn-success" (click)="onOpen()">Open</button></div>
-              <div class="col-sm-5"><button class="btn btn-action" (click)="onDownload()">Download</button></div>
-              <div class="col-sm-3"><button class="btn btn-danger" (click)="onPrint()">Print</button></div>
+              <button class="btn btn-success" (click)="onOpen()">Open</button>
+              <button class="btn btn-action" (click)="onDownload()" style="width: 40;">Download</button>
+              <button class="btn btn-danger" (click)="onPrint()">Print</button>
             </div>
 
 

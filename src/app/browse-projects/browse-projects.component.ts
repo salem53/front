@@ -58,4 +58,13 @@ export class BrowseProjectsComponent implements OnInit {
  
   }
 
+  addAppliedFreelancer(idMission)
+  {
+    this.idFreelancer=parseInt(sessionStorage.getItem('id')) ; 
+    //this.serviceFlask.updateAppliedList(idMission,idFreelancer);
+    this.serviceFlask.updateAppliedList(idMission,this.idFreelancer).subscribe(res=>{console.log("heyoapplied")});
+   console.log(idMission);
+  }
+
+
 }

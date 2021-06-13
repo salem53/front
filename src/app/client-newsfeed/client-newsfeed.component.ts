@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import { FeedbacksFreelancerService } from '../services/reviews/feedbacks-freelancer.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -36,10 +37,21 @@ export class ClientNewsfeedComponent implements OnInit {
   sexe: any;
   telephone_number: any;
   nationality: any;
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,private feedbackService:FeedbacksFreelancerService ) {
     this.getImage();
+    this.idClient=parseInt(sessionStorage.getItem('id'));
+    this.feedbackService.getClientFeedback(this.idClient).subscribe(response=>{console.log("client feed done");this.listFeedbacks=response;console.log(this.listFeedbacks);});
+  //check the id in this function!!!!!
+  if (!localStorage.getItem('firstReload') || localStorage.getItem('firstReload') === 'true') {
+    localStorage.setItem('firstReload', 'false');
+    window.location.reload();
+  } else {
+    localStorage.setItem('firstReload', 'true');
+  }
   }
 
+  listFeedbacks:any;
+  idClient:number;
   ngOnInit(): void {
     this.getImage();
     /*this.email = sessionStorage.getItem("username");
@@ -82,7 +94,7 @@ export class ClientNewsfeedComponent implements OnInit {
       );
   }
   //Gets called when the user clicks on retieve image button to get the image from back end
-  45
+ // 45
   getImage() {
     //Make a call to Sprinf Boot to get the Image Bytes.
     this.httpClient.get('http://127.0.0.1:8070/clients/getImageByEmail/'+sessionStorage.getItem("username"))

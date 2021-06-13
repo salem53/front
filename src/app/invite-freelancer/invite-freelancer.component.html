@@ -19,11 +19,7 @@
             <div>
               <img src="./assets/Blog-post/blog1.png" class="img" alt="blog1">
             </div>
-            <div class="post-info flex-row">
-              <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14, 2019</span>
-              <span>2 Commets</span>
-            </div>
+            
           </div>
          
           <div class="post-title">
@@ -33,9 +29,9 @@
            <br>
            <strong>Phone:</strong> {{freelancer.telephoneNumber}}
            <br>
-           <strong>Rating:</strong> {{freelancer.rating}}
+           <strong>Rating:</strong> {{freelancer.rating}} /10
             <br>
-           <button class="btn post-btn" name="{{freelancer.id}}" (click)=addInvitedFreelancer(idMission,freelancer.id)>Invite him/her &nbsp; <i class="fas fa-arrow-right"></i></button>
+           <button class="btn post-btn" name="{{freelancer.id}}" (click)=addInvitedFreelancer(idMission,freelancer.id)><strong>Invite him/her</strong> &nbsp; <i class="fas fa-arrow-right"></i></button>
           </div>
           
         </div>

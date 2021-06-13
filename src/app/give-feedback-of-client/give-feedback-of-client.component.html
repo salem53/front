@@ -2,10 +2,10 @@
 <!-- container -->
 <div class="container">
     <div class="row">
-        <h2>Validate Skill</h2>
+        <h2>New Skill</h2>
         <p class="lead">
            
-            <small class="text-muted">Answer these questions in order to validate your skill and ameriorate your profil</small>
+            <small class="text-muted">Add new one in order to ameriorate your profil</small>
         </p>
 
         <!--<div class="alert alert-warning">
@@ -18,23 +18,16 @@
         <div class="row">
             <div class="col-sm-8">
 
-                
-                <form role="form" #myForm=ngForm (ngSubmit)=submitQuestions(myForm)>
-                 
-                    <div *ngFor="let question of listQuestions">
-                        <h4 class="page-header">{{question[0]}}</h4>
+                <!--<h4 class="page-header">Default Implementation</h4>-->
+                <form role="form" #myForm=ngForm (ngSubmit)=giveFeedback(myForm)>
+               
                     <div class="form-group float-label-control">
-                      
-                        <label for="">1.{{question[1]}}</label><br>
-                        <label for="">2.{{question[2]}}</label><br>
-                        <label for="">3.{{question[3]}}</label>
-                        <input type="text" class="form-control"  placeholder="insert the full response" > <!--#name="ngModel" name="name" [(ngModel)]="skill.name" required -->
+                      <!--  <label for="">Skill:</label>-->
+                        <input type="text" class="form-control" placeholder="feedback" #feedback="ngModel" name="feedback" [(ngModel)]="review.feedback" required>
                     </div>
-                   <!-- <div [hidden]="name.valid || name.pristine"> Please insert the skill in order to add it to your profil</div>-->
-                </div>
+                    <div [hidden]="feedback.valid || feedback.pristine" style="color: blue;"> Please insert your feedback </div>
+                 
   
-
-
                     <button class="btn btn-action" type="submit" [disabled]=!myForm.valid > Submit </button>
 
                 </form>
@@ -50,9 +43,11 @@
                     </div>
                     <div class="panel-body">
                         <ul>
-                            <li>Validate your skills</li>
                             <li>Add as much skills as you have</li>
-                            <li>try your chances and apply for missions</li>
+                            <li>in order to boost your profil's image.</li>
+                            <li>Validate your skills </li>
+                            <li>to prouve your capacities and level</li>
+                            <li>in that skill</li>
                             
                         </ul>
                     </div>

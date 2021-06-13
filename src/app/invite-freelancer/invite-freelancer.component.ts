@@ -38,12 +38,7 @@ idMission:number;
   this.serviceFlask.updateInvitedList(idMission,idFreelancer).subscribe(res=>{console.log("heyoinvited")});
    console.log(this.idMission);
  }
- addAppliedFreelancer(idMission,idFreelancer)
- {
-   //this.serviceFlask.updateAppliedList(idMission,idFreelancer);
-   this.serviceFlask.updateAppliedList(idMission,idFreelancer).subscribe(res=>{console.log("heyoapplied")});
-  // console.log("hello "+idFreelancer);
- }
+
 
  heyo(idMission,idFreelancer)
  {

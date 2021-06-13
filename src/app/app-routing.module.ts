@@ -1,3 +1,4 @@
+import { GiveFeedbackOfClientComponent } from './give-feedback-of-client/give-feedback-of-client.component';
 import { SkillsQuestionsComponent } from './skills-questions/skills-questions.component';
 import { ListInvitationsFreelancerComponent } from './list-invitations-freelancer/list-invitations-freelancer.component';
 import { FreelancerFeedbackComponent } from './freelancer-feedback/freelancer-feedback.component';
@@ -123,7 +124,8 @@ const routes: Routes = [
   {path: 'feedbackFreelancer/:idClient/:idMission',component: FreelancerFeedbackComponent},
   {path: 'invitationsForMissions',component: ListInvitationsFreelancerComponent},
   {path: 'listMissionsAppliedFor',component: ListAppliedMissionsFreelancerComponent},
-  {path: 'validateSkills',component: SkillsQuestionsComponent}
+  {path: 'validateSkills',component: SkillsQuestionsComponent},
+   {path: 'giveFeedbackClient/:idFreelancer/:idMission',component : GiveFeedbackOfClientComponent}
 
 ];
 

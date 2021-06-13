@@ -10,7 +10,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+        <li class="breadcrumb-item active" aria-current="page">Freelancer Profil</li>
       </ol>
     </nav>
 
@@ -43,14 +43,7 @@
           </div>
         </div>
         <div class="card mt-3">
-<<<<<<< HEAD
-
-          <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education :</h3>
-
-          <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education </h3>
-=======
           <h3><span class="text-secondary"><a href="http://localhost:4200/newStudy/{{idFreelancer}}">+</a></span> Education </h3>   
->>>>>>> Nermine
           <ul class="list-group list-group-flush" *ngFor="let study of listStudies">
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
               <h6 class="mb-0">{{study.education.degree}} at: {{study.education.school}} </h6>
@@ -92,6 +85,15 @@
             </div>
             <hr>
           -->
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0 gauche">Rating</h6>
+              </div>
+              <div class="col-sm-8 droite" style="color:red;size: 20px;">
+                {{rating}} /10
+              </div>
+            </div>
+            <hr>
             <div class="row">
               <div class="col-sm-4">
                 <h6 class="mb-0 gauche" >Job</h6>

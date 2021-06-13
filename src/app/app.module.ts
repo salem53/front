@@ -70,6 +70,8 @@ import { FreelancerFeedbackComponent } from './freelancer-feedback/freelancer-fe
 import { ListInvitationsFreelancerComponent } from './list-invitations-freelancer/list-invitations-freelancer.component';
 import { ListAppliedMissionsFreelancerComponent } from './list-applied-missions-freelancer/list-applied-missions-freelancer.component';
 import { SkillsQuestionsComponent } from './skills-questions/skills-questions.component';
+import { GiveFeedbackOfClientComponent } from './give-feedback-of-client/give-feedback-of-client.component';
+import { GiveFeedbackOfFreelancerComponent } from './give-feedback-of-freelancer/give-feedback-of-freelancer.component';
 
 
 
@@ -139,7 +141,9 @@ import { SkillsQuestionsComponent } from './skills-questions/skills-questions.co
     FreelancerFeedbackComponent,
     ListInvitationsFreelancerComponent,
     ListAppliedMissionsFreelancerComponent,
-    SkillsQuestionsComponent
+    SkillsQuestionsComponent,
+    GiveFeedbackOfClientComponent,
+    GiveFeedbackOfFreelancerComponent
    
 
   ],

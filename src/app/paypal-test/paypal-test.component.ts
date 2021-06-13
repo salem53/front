@@ -10,7 +10,7 @@ import {MissionService} from '../services/missions/mission.service';
 export class PaypalTestComponent implements OnInit {
   money: string;
   id;
-
+  idMission;
 
   constructor(public router: Router ,public missionService : MissionService,public route: ActivatedRoute) {
 
@@ -35,7 +35,8 @@ export class PaypalTestComponent implements OnInit {
         this.missionService.setMissionAsCompleted(this.id).subscribe(
           value => {
             alert("transaction completed successfully");
-            this.router.navigate(['post-project'])
+            //this.router.navigate(['post-project'])
+           // this.router.navigate(['giveFeedbackClient/'+this.id+'/'+this.idMission]);
           }
         )
 

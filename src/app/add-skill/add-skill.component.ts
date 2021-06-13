@@ -35,7 +35,7 @@ export class AddSkillComponent implements OnInit {
     this.skilled.idSkilled=this.idSkilled;
     this.skillService.getSkillByName(form.value.name).subscribe(
       response => {
-        console.log(response);
+       // console.log(response);
         if (response[0]==null)//this skill isn't already registred
         {
           this.skillService.createNewSkill(this.skill).subscribe( responses => { 
@@ -46,9 +46,9 @@ export class AddSkillComponent implements OnInit {
               'id':responses["id"] 
             }
         
-           console.log(responses["id"]);
+          // console.log(responses["id"]);
           this.skilled.skill=this.skill ;
-          this.skillService.createSkilled(this.skilled).subscribe( responsee => {}); 
+          this.skillService.createSkilled(this.skilled).subscribe( responsee => {console.log("new one");this.router.navigate(['newsfeed-freelancer']) ; }); 
           });
         }
         else
@@ -59,12 +59,12 @@ export class AddSkillComponent implements OnInit {
             'id':response[0]["id"] 
           }
           this.skilled.skill=this.skill ;
-          this.skillService.createSkilled(this.skilled).subscribe( responsee => {}); 
+          this.skillService.createSkilled(this.skilled).subscribe( responsee => {console.log("old one");this.router.navigate(['newsfeed-freelancer']) ; }); 
          }
 
 
       });
-      this.router.navigate(['newsfeed-freelancer']) ; 
+     // this.router.navigate(['newsfeed-freelancer']) ; 
   }
 
 

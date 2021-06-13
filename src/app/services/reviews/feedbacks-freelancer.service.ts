@@ -27,5 +27,8 @@ export class FeedbacksFreelancerService {
    {
       return this.Http.get(this.urlReviews+'getReviewsAboutFreelancer/'+idFreelancer);
    }
-
+   getClientFeedback(idClient)
+   {
+      return this.Http.get(this.urlReviews+'getReviewsAboutClient/'+idClient);
+   }
 }
