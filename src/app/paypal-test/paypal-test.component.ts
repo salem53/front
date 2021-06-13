@@ -34,9 +34,9 @@ export class PaypalTestComponent implements OnInit {
       onApprove: (details ) => {
         this.missionService.setMissionAsCompleted(this.id).subscribe(
           value => {
-            alert("transaction completed successfully");
+            //alert("transaction completed successfully");
             //this.router.navigate(['post-project'])
-           // this.router.navigate(['giveFeedbackClient/'+this.id+'/'+this.idMission]);
+            this.router.navigate(['giveFeedbackClient/'+parseInt(sessionStorage.getItem('id'))+'/'+this.id]);
           }
         )
 
