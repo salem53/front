@@ -62,7 +62,7 @@ export class BrowseProjectsComponent implements OnInit {
   {
     this.idFreelancer=parseInt(sessionStorage.getItem('id')) ; 
     //this.serviceFlask.updateAppliedList(idMission,idFreelancer);
-    this.serviceFlask.updateAppliedList(idMission,this.idFreelancer).subscribe(res=>{console.log("heyoapplied")});
+    this.serviceFlask.updateAppliedList(idMission,this.idFreelancer).subscribe(res=>{console.log("heyoapplied"); this.router.navigate(['newsfeed-freelancer']);});
    console.log(idMission);
   }
 
