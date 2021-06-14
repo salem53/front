@@ -152,7 +152,8 @@
             <h3 style="margin-left: 2%;"><span class="text-secondary"><a href="http://localhost:4200/newSkill/{{idFreelancer}}">+</a></span> Skills</h3>
                 <ul class="list-group list-group-flush" *ngFor="let skill of listSkills" style="margin-top: -2%;">
               <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                <h6 class="mb-0" > <strong style="font-size:small;">{{skill.skill.name}}</strong> <a href="/validateSkills">--Validate--></a> </h6>
+                <h6 class="mb-0" > <strong style="font-size:small;">{{skill.skill.name}}</strong>  </h6>
+                <h6 class="mb-0" > Validation's status:<strong style="font-size:small;">{{ skill.validate }}</strong> <a href="/validateSkills/{{skill.skill.id}}">--Validate--></a> </h6>
              
                 <!--<ul><li>{{skill.skill.name}}</li></ul>-->
               </li> 

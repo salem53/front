@@ -124,7 +124,7 @@ const routes: Routes = [
   {path: 'feedbackFreelancer/:idClient/:idMission',component: FreelancerFeedbackComponent},
   {path: 'invitationsForMissions',component: ListInvitationsFreelancerComponent},
   {path: 'listMissionsAppliedFor',component: ListAppliedMissionsFreelancerComponent},
-  {path: 'validateSkills',component: SkillsQuestionsComponent},
+  {path: 'validateSkills/:idSkill',component: SkillsQuestionsComponent},
    {path: 'giveFeedbackClient/:idFreelancer/:idMission',component : GiveFeedbackOfClientComponent}
 
 ];

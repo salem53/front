@@ -56,6 +56,10 @@ getQuestions()
     return this.Http.get(this.urlSkilled+'/getQuestions');
   }
 
-
+  setValid(idFreelancer,idSkill) 
+  {
+    //console.log("hi");
+    return this.Http.put(this.urlSkilled+'/skillValid/'+idFreelancer+'/'+idSkill,"hello");
+  }
 
 }

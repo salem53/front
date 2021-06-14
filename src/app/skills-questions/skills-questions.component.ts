@@ -25,7 +25,9 @@ listQuestions :any;
 test:string="true";
 submitQuestions(form)
 {
-  console.log(this.skill);
+  console.log(parseInt(sessionStorage.getItem('id')))
+  this.skillService.setValid(parseInt(sessionStorage.getItem('id')),this.route.snapshot.params.idSkill).subscribe(res=>{});
+  this.router.navigate(['newsfeed-freelancer']);
 }
 
 evaluateQuestions(form)
