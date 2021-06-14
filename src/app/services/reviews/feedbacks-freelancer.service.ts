@@ -22,14 +22,14 @@ export class FeedbacksFreelancerService {
    }*/
    addFreelancerFeedback(idMission,review)
    {
-      this.serviceFlask.updateFreelancerRating(review.freelancer.id).subscribe(res=>{console.log(review.freelancer.id)});
-      return this.Http.put(this.urlReviews+'addFreelancerReview/'+idMission,review);
+      this.Http.put(this.urlReviews+'addFreelancerReview/'+idMission,review).subscribe(res=>{});
+      this.serviceFlask.updateClientRating(review.client.id).subscribe(res=>{console.log(review.client.id)});
+       
    }
    addClientFeedback(idMission,review)
    {
-      return this.Http.put(this.urlReviews+'addClientReview/'+idMission,review).subscribe(res=>{this.serviceFlask.updateClientRating(review.client.id).subscribe(res=>{console.log(review.client.id)});})
-      
-      
+       this.Http.put(this.urlReviews+'addClientReview/'+idMission,review).subscribe(res=>{});
+       this.serviceFlask.updateFreelancerRating(review.freelancer.id).subscribe(res=>{console.log(review.freelancer.id)});
    }
 
    addFeedback(reviews)
