@@ -23,9 +23,9 @@
                
                     <div class="form-group float-label-control">
                       <!--  <label for="">Skill:</label>-->
-                        <input type="text" class="form-control" placeholder="feedback" #feedback="ngModel" name="feedback" [(ngModel)]="review.feedback" required>
+                        <input type="text" class="form-control" placeholder="feedback" name="feed" #feed="ngModel" required  [(ngModel)]="feedback.feed">
                     </div>
-                    <div [hidden]="feedback.valid || feedback.pristine" style="color: blue;"> Please insert your feedback </div>
+                    <div [hidden]="feed.valid || feed.pristine" style="color: blue;"> Please insert your feedback </div>
                  
   
                     <button class="btn btn-action" type="submit" [disabled]=!myForm.valid > Submit </button>

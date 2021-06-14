@@ -21,6 +21,7 @@ export class NotHiredMissionDetailsComponent implements OnInit {
     this.appliedFreelancers=JSON.parse(sessionStorage.appliedFreelancers);
     this.mission=JSON.parse(sessionStorage.mission);
     console.log(sessionStorage.mission);
+  
   }
 
   ngOnInit(): void {
@@ -51,7 +52,7 @@ export class NotHiredMissionDetailsComponent implements OnInit {
   hireFreelancer(id) {
     this.missionService.setMissionAsHired(this.mission.id,id).subscribe(data =>{
       this.addEmptyReview(id);
-      console.log("review ajouté")
+      console.log("review ajouté");
     } );
 
     /*

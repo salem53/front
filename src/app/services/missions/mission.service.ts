@@ -14,7 +14,7 @@ export class MissionService {
   }
   getMissionById(id)
   {
-    return this.Http.get(this.urlMissions +'/getMission/'+id);
+    return this.Http.get(this.urlMissions +'/getMisssion/'+id);
   }
   getHiredMissions(){
     return this.Http.get(this.urlMissions +'/getHiredMissions');

@@ -15,7 +15,7 @@ export class GiveFeedbackOfClientComponent implements OnInit {
   }
 
   review:any={};
-
+  feedback:any={};
   
   giveFeedback(form)
   {
@@ -28,14 +28,21 @@ export class GiveFeedbackOfClientComponent implements OnInit {
     let mission:any={
         'id':parseInt(this.route.snapshot.params.idMission)
     }
-      this.review=
+    this.review.commentClient=form.value.feed;
+    this.review.mission=mission;
+    this.review.client=client;
+    this.review.freelancer=freelancer;
+    /*  this.review=
       {
         'freelancer':freelancer,
         'client':client,
         'mission':mission,
-        'commentClient':form.value.feedback
-      }
-        this.serviceReview.getClientFeedback(this.review).subscribe(res=>{console.log("feed done")});
+       // 'commentClient':form.value.feedback
+      }*/
+      this.serviceReview.addClientFeedback(parseInt(this.route.snapshot.params.idMission),this.review); //.subscribe(res=>{console.log("feed done")});
+       // this.serviceReview.getClientFeedback(this.review).subscribe(res=>{console.log("feed done")});
+       alert("Thanks for giving your feedback");
+      this.router.navigate(['list-completed-client-mission']);
   }
 
 }

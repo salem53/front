@@ -55,8 +55,9 @@ idClient:number;
     */
     console.log(form.value.feed);
     this.review.commentFreelancer=form.value.feed;
-    this.serviceFeed.addFreelancerFeedback(this.idFreelancer,this.idClient,this.review).subscribe(res=>{console.log("heyoooo1")});
-    
+    this.serviceFeed.addFreelancerFeedback(this.idMission,this.review).subscribe(res=>{console.log("heyoooo1")});
+    alert("Thanks for giving your feedback");
+    this.router.navigate(['list-completed-freelancer-mission']);
   }
 
 

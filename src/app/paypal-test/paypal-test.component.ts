@@ -21,9 +21,9 @@ export class PaypalTestComponent implements OnInit {
       params => {
         this.money = params.get('money');
         this.id = params.get('id');
-        console.log(this.money);
-        console.log(this.id);
-
+        /*console.log(this.money);
+        console.log(this.id);*/
+        
       }
     );
     render({
@@ -36,7 +36,11 @@ export class PaypalTestComponent implements OnInit {
           value => {
             //alert("transaction completed successfully");
             //this.router.navigate(['post-project'])
-            this.router.navigate(['giveFeedbackClient/'+parseInt(sessionStorage.getItem('id'))+'/'+this.id]);
+            
+            this.missionService.getMissionById(this.id).subscribe(res=>{console.log(res['freelancer'].id);
+            this.router.navigate(['giveFeedbackClient/'+parseInt(res['freelancer'].id)+'/'+this.id]);
+          })
+            //this.router.navigate(['giveFeedbackClient/'+parseInt(sessionStorage.getItem('id'))+'/'+this.id]);
           }
         )
 

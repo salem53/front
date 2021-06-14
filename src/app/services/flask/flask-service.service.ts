@@ -30,4 +30,8 @@ export class FlaskServiceService {
   {
       return this.Http.get<any[]>(this.urlFlask+'/upadateFreelancerRating/'+idFreelancer);
   }
+  updateClientRating(idClient)
+  {
+      return this.Http.get<any[]>(this.urlFlask+'/updateClientRating/'+idClient);
+  }
 }

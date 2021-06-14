@@ -21,7 +21,9 @@ export class ListCompletedClientMissionsComponent implements OnInit {
     })
   }
 
-  giveFeedback() {
+  giveFeedback(mission) {
 
+   // console.log(mission.id+'/'+mission.freelancer.id);
+    this.router.navigate(['giveFeedbackClient/'+mission.freelancer.id+'/'+mission.id]);
   }
 }
