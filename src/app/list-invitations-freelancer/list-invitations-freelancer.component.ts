@@ -25,8 +25,8 @@ export class ListInvitationsFreelancerComponent implements OnInit {
   acceptInvitation(idMission)
   {
     console.log(idMission+1);
-    this.service.acceptInvitationFreelancer(idMission,this.idFreelancer).subscribe(res=>{});
-    this.router.navigate(['invitationsForMissions']);
+    this.service.acceptInvitationFreelancer(idMission,this.idFreelancer).subscribe(res=>{ this.router.navigate(['invitationsForMissions']);});
+   
   }
 
 }
